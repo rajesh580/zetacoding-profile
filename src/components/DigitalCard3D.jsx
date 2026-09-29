@@ -153,7 +153,7 @@ export default function DigitalCard3D({
                   {companyInfo.phones?.india || "+91 8867845719"}
                 </div>
                 <div className="text-[#85cc38] font-bold">
-                  {companyInfo.emails?.primary || "infor@zetacoding.com"}
+                  {companyInfo.emails?.primary || "info@zetacoding.com"}
                 </div>
                 <div className="text-[10px] text-slate-400 font-mono">
                   www.zetacoding.com

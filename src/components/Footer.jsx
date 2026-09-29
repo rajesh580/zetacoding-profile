@@ -112,11 +112,11 @@ export default function Footer({ onOpenCertModal }) {
 
               <div className="pt-2 space-y-1.5">
                 <a 
-                  href="mailto:infor@zetacoding.com" 
+                  href="mailto:info@zetacoding.com" 
                   className="flex items-center gap-1.5 text-slate-200 hover:text-[#85cc38] transition-colors font-medium"
                 >
                   <Mail size={13} className="text-[#85cc38]" />
-                  <span>Mail. infor@zetacoding.com</span>
+                  <span>Mail. info@zetacoding.com</span>
                 </a>
                 <a 
                   href="https://www.zetacoding.com" 

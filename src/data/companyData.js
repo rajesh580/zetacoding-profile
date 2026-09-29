@@ -12,7 +12,7 @@ export const companyInfo = {
       type: "Indian Registered Partnership / MSME Enterprise",
       address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Bengaluru, Karnataka, India - 560064",
       phone: "+91 8867845719",
-      email: "infor@zetacoding.com",
+      email: "info@zetacoding.com",
       status: "Headquarters (India)"
     },
     mangaluruBranch: {
@@ -42,8 +42,8 @@ export const companyInfo = {
     uae: "9715631401786"
   },
   emails: {
-    primary: "infor@zetacoding.com",
-    support: "infor@zetacoding.com",
+    primary: "info@zetacoding.com",
+    support: "info@zetacoding.com",
     careers: "careers@zetacoding.com"
   },
   stats: [
@@ -722,7 +722,7 @@ export const officeLocations = [
     type: "Engineering Headquarters & Innovation Lab",
     address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Bengaluru, Karnataka, India - 560064",
     phone: "+91 8867845719",
-    email: "infor@zetacoding.com",
+    email: "info@zetacoding.com",
     whatsapp: "918867845719"
   },
   {
