@@ -26,12 +26,10 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About & Journey', path: '/about' },
-    { name: 'Products & Platforms', path: '/products' },
-    { name: 'GEO & AI Search', path: '/geo-ai', badge: 'NEW' },
+    { name: 'About', path: '/about' },
+    { name: 'Product / Platform', path: '/products' },
     { name: 'Services', path: '/services' },
-    { name: 'Academic MOUs', path: '/academic-mous' },
-    { name: 'Certifications', path: '/certifications' },
+    { name: 'Blogs', path: '/blogs' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -44,29 +42,16 @@ export default function Navbar() {
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo & Wordmark */}
+          {/* Brand Wordmark (Logo icon removed in this section per specification) */}
           <Link to="/" className="flex items-center gap-3 group outline-none focus:outline-none">
-            <div className="flex items-center gap-2.5">
-              <div className="w-11 h-11 rounded-xl bg-white/95 p-1.5 shadow-xl flex items-center justify-center border-2 border-[#72bf44] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(114,191,68,0.5)] transition-all">
-                <img 
-                  src="/assets/zetacoding_logo_transparent.png" 
-                  alt="Zetacoding Logo" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.src = "/assets/page_2_img_1.png";
-                  }}
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <span className="text-xl sm:text-2xl font-black tracking-wider text-white font-display">
-                  ZETA<span className="text-[#85cc38]">CODING</span>
-                </span>
-                <span className="text-[10px] text-[#85cc38] font-black tracking-widest uppercase flex items-center gap-1">
-                  <span>INDIA • U.A.E</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#72bf44] animate-ping" />
-                </span>
-              </div>
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-black tracking-wider text-white font-display group-hover:text-slate-100 transition-colors">
+                ZETA<span className="text-[#85cc38]">CODING</span>
+              </span>
+              <span className="text-[10px] text-[#85cc38] font-black tracking-widest uppercase flex items-center gap-1">
+                <span>INDIA • U.A.E</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#72bf44] animate-ping" />
+              </span>
             </div>
           </Link>
 

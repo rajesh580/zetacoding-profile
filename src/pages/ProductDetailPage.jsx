@@ -6,7 +6,7 @@ import {
   Bot, UtensilsCrossed, Wrench, CreditCard, Building, Flame,
   Share2, Award, ChevronRight, Check, ArrowRight
 } from 'lucide-react';
-import { products, companyInfo } from '../data/companyData';
+import { products, companyInfo, findProductOrType } from '../data/companyData';
 import AnimatedSection from '../components/AnimatedSection';
 import Card3D from '../components/Card3D';
 import { motion } from 'framer-motion';
@@ -15,8 +15,8 @@ export default function ProductDetailPage() {
   const { productId } = useParams();
   const navigate = useNavigate();
 
-  // Find product by id
-  const product = products.find(p => p.id === productId) || products[0];
+  // Find product by id (supports both product id and type id)
+  const product = findProductOrType(productId);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -131,6 +131,79 @@ export default function ProductDetailPage() {
                 {product.desc} Engineered for high-throughput concurrency, bulletproof data security, and seamless API interoperability across global enterprise cloud networks.
               </p>
 
+              {/* Types in this Product Suite (Page 5 PDF Specification) */}
+              {product.types && (
+                <div className="pt-4 border-t border-white/10 space-y-6">
+                  <div>
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">Solution Architecture</span>
+                    <h3 className="text-xl font-black text-white mt-1">
+                      Included Platform Types &amp; Software ({product.types.length})
+                    </h3>
+                  </div>
+
+                  <div className="space-y-4">
+                    {product.types.map((type, idx) => (
+                      <div key={type.id || idx} className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3.5 hover:border-[#72bf44]/50 transition-colors text-left">
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <div>
+                            <span className="text-[10px] font-mono font-bold text-[#85cc38] uppercase bg-[#72bf44]/15 px-2.5 py-0.5 rounded-full border border-[#72bf44]/30 mr-2">
+                              Type 0{idx + 1}
+                            </span>
+                            <h4 className="text-lg font-black text-white inline-block">{type.name}</h4>
+                            <p className="text-xs text-[#85cc38] font-semibold mt-0.5">{type.subtype || type.tagline}</p>
+                          </div>
+                          {type.badge && (
+                            <span className="text-xs px-3 py-1 rounded-xl bg-white/10 text-slate-200 border border-white/10 font-bold">
+                              {type.badge}
+                            </span>
+                          )}
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{type.desc}</p>
+
+                        {type.highlights && (
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 border-t border-white/10">
+                            {type.highlights.map((h, hi) => (
+                              <div key={hi} className="flex items-start gap-2 text-xs text-slate-200">
+                                <CheckCircle2 size={14} className="text-[#85cc38] shrink-0 mt-0.5" />
+                                <span>{h}</span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+
+                        {type.editions && (
+                          <div className="pt-3 border-t border-white/10 space-y-2">
+                            <div className="text-xs font-bold text-white uppercase tracking-wider">Available Editions (5 Tiers):</div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                              {type.editions.map((ed, ei) => (
+                                <div key={ei} className="p-3 rounded-xl bg-white/5 border border-white/10">
+                                  <div className="text-xs font-bold text-[#85cc38]">{ed.name}</div>
+                                  <div className="text-[11px] text-slate-300 mt-0.5">{ed.desc}</div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {type.hardwareRange && (
+                          <div className="pt-3 border-t border-white/10 space-y-2">
+                            <div className="text-xs font-bold text-white uppercase tracking-wider">Available Hardware &amp; Finishes:</div>
+                            <div className="flex flex-wrap gap-2">
+                              {type.hardwareRange.map((hw, hi) => (
+                                <span key={hi} className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-bold text-[#85cc38]">
+                                  {hw}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Modules or Features List */}
               {(product.modules || product.features || product.highlights || product.services) && (
                 <div className="space-y-4 pt-4 border-t border-white/10">
@@ -141,6 +214,43 @@ export default function ProductDetailPage() {
                         <CheckCircle2 size={18} className="text-[#85cc38] shrink-0 mt-0.5" />
                         <span className="text-xs sm:text-sm text-slate-200 font-medium">{item}</span>
                       </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tiers If Present (e.g. AlignBooks 5 Editions) */}
+              {product.tiers && (
+                <div className="pt-4 border-t border-white/10 space-y-4">
+                  <div>
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">5 Tailored Editions</span>
+                    <h3 className="text-lg font-bold text-white mt-0.5">Available Platform Editions:</h3>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                    {product.tiers.map((tier, idx) => (
+                      <div key={idx} className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#72bf44]/50 transition-colors">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <div className="w-6 h-6 rounded-lg bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center text-xs font-black">
+                            {idx + 1}
+                          </div>
+                          <div className="text-sm font-bold text-white">{tier.name}</div>
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed">{tier.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Hardware Range If Present */}
+              {product.hardwareRange && (
+                <div className="pt-4 border-t border-white/10 space-y-3">
+                  <h3 className="text-sm font-bold text-white uppercase tracking-wider">Available Hardware &amp; Finishes:</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {product.hardwareRange.map((hw, i) => (
+                      <span key={i} className="px-3.5 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-[#85cc38]">
+                        {hw}
+                      </span>
                     ))}
                   </div>
                 </div>

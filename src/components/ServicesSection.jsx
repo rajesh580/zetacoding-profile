@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Megaphone, Code2, GraduationCap, CheckCircle2, ArrowRight,
-  Layers, Sparkles, Terminal, Smartphone, Database, Globe,
-  Shield, Cpu, BookOpen, Laptop, Phone
+  Code2, CheckCircle2, ArrowRight,
+  Sparkles, Terminal, Smartphone, Database, Globe,
+  Shield, Cpu, Phone, Bot, Server, Lock,
+  Zap, Search, BarChart3, LineChart, MessageSquare, Layers
 } from 'lucide-react';
 import { services } from '../data/companyData';
-import AnimatedSection from './AnimatedSection';
 import Card3D from './Card3D';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -14,45 +14,323 @@ export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState('web-app-dev');
 
   return (
-    <section id="services" className="py-4 space-y-12 text-slate-100 w-full">
+    <section id="services" className="py-4 space-y-8 text-slate-100 w-full">
       <div className="w-full">
         
-        {/* Section Header */}
-        <AnimatedSection className="text-left mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#72bf44]/15 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-3 border border-[#72bf44]/30 shadow-sm animate-pulse-glow">
-            <Cpu size={14} className="text-[#85cc38]" />
-            <span>End-to-End Capabilities</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
-            Our Core <span className="text-[#85cc38]">Services</span>
-          </h2>
-          <p className="mt-2 text-slate-300 text-base sm:text-lg font-normal max-w-3xl">
-            Empowering modern enterprises with AI-driven marketing automation, custom web/mobile engineering, and premier academic-industry 4.0 programs.
-          </p>
-        </AnimatedSection>
-
-        {/* Top 3 Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-start gap-3 mb-10">
+        {/* 4 Navigation Tabs */}
+        <div className="flex flex-wrap items-center justify-start gap-3 mb-8">
           {services.map((svc) => (
             <button
               key={svc.id}
               onClick={() => setActiveTab(svc.id)}
-              className={`flex items-center gap-2.5 px-6 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm ${
+              className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm ${
                 activeTab === svc.id
                   ? 'btn-3d-green text-slate-950 font-black'
                   : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'
               }`}
             >
-              {svc.id === 'digital-transformation' && <Megaphone size={18} />}
+              {svc.id === 'cyber-security' && <Shield size={18} />}
+              {svc.id === 'digital-transformation' && <Sparkles size={18} />}
               {svc.id === 'web-app-dev' && <Code2 size={18} />}
-              {svc.id === 'academic-industry' && <GraduationCap size={18} />}
+              {svc.id === 'ai-agents-chatbots' && <Bot size={18} />}
               <span>{svc.title}</span>
             </button>
           ))}
         </div>
 
-        {/* Tab 1: Web & App Development */}
+        {/* Active Tab Panel */}
         <AnimatePresence mode="wait">
+          
+          {/* TAB 1: CYBER SECURITY SERVICE */}
+          {activeTab === 'cyber-security' && (
+            <motion.div
+              key="cyber-security"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <div className="lg:col-span-6 space-y-6">
+                  <div>
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
+                      Blue PPT Security Framework
+                    </span>
+                    <h3 className="text-3xl font-black text-white mt-1 font-display">
+                      Cyber Security <span className="text-[#85cc38]">Service</span>
+                    </h3>
+                    <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                      Comprehensive enterprise cyber defense, continuous vulnerability assessments, and 24/7 SOC incident containment aligned with international standards.
+                    </p>
+                  </div>
+
+                  {/* 4 Security Pillars */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center mb-2">
+                        <Lock size={16} />
+                      </div>
+                      <div className="text-sm font-bold text-white mb-1">VAPT Assessments</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Web application, mobile API, network, and cloud vulnerability penetration testing with executive remediation roadmaps.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center mb-2">
+                        <Server size={16} />
+                      </div>
+                      <div className="text-sm font-bold text-white mb-1">24/7 Managed SOC</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Continuous SIEM telemetry ingestion, anomaly detection, alert correlation, and sub-minute incident response.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center mb-2">
+                        <Shield size={16} />
+                      </div>
+                      <div className="text-sm font-bold text-white mb-1">Cloud Defense & Zero Trust</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Hardening AWS, Azure & private cloud perimeters with strict least-privilege IAM and encrypted micro-segmentation.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center mb-2">
+                        <Zap size={16} />
+                      </div>
+                      <div className="text-sm font-bold text-white mb-1">Compliance & Audits</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        100% audit-readiness and governance for ISO 27001, UAE NESA, GDPR, and Indian CERT-In statutory requirements.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Checklist */}
+                  <div className="space-y-2 pt-2">
+                    <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">Blue Team Defense Capabilities:</div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {[
+                        "Static & Dynamic Code Analysis (SAST/DAST)",
+                        "External Threat Surface Reconnaissance",
+                        "Incident Containment & Forensic Auditing",
+                        "Excel & CSV Audit-Ready Telemetry Reports",
+                        "Continuous MITRE ATT&CK Threat Mapping",
+                        "Cloud Posture Management (CSPM)"
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-slate-200 font-medium p-1">
+                          <CheckCircle2 size={15} className="text-[#85cc38] shrink-0" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                    >
+                      <span>Schedule a Cyber Security Consultation</span>
+                      <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right: SOC Command Display */}
+                <div className="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-8 space-y-4 border border-white/10">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
+                      <h4 className="text-sm font-bold text-white uppercase tracking-wider">
+                        Security Operations Center (SOC)
+                      </h4>
+                    </div>
+                    <span className="text-[11px] text-[#85cc38] font-mono font-bold">24/7 Continuous Defense</span>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-black/40 border border-white/10 font-mono text-xs space-y-2 text-slate-300">
+                    <div className="text-slate-400 flex items-center justify-between">
+                      <span>TELEMETRY STATUS: ACTIVE</span>
+                      <span className="text-emerald-400">NORMAL</span>
+                    </div>
+                    <div className="text-[11px] text-slate-300">
+                      &gt; Ingesting network packets, cloud firewalls & auth endpoints...
+                    </div>
+                    <div className="text-[11px] text-[#85cc38]">
+                      &gt; CIPHER WAF: Real-time SQLi, XSS & DDoS protection active.
+                    </div>
+                    <div className="text-[11px] text-purple-300">
+                      &gt; Sachet SOC: Continuous log correlation & Excel incident reporting.
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center">
+                      <div className="text-2xl font-black text-[#85cc38] font-display">&lt;60s</div>
+                      <div className="text-[11px] text-slate-300 mt-1">Incident Triage Latency</div>
+                    </div>
+                    <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-center">
+                      <div className="text-2xl font-black text-white font-display">100%</div>
+                      <div className="text-[11px] text-slate-300 mt-1">Compliance Audit Pass</div>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-[#72bf44]/10 border border-[#72bf44]/30 space-y-2">
+                    <div className="text-xs font-bold text-[#85cc38] uppercase tracking-wider flex items-center gap-1.5">
+                      <Shield size={14} />
+                      <span>Regulatory Standards Supported</span>
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Audited for ISO 9001:2015, ISO 27001, UAE NESA Cybersecurity Standard, GDPR, and Indian CERT-In guidelines.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          )}
+
+          {/* TAB 2: AI DIGITAL TRANSFORMATION */}
+          {activeTab === 'digital-transformation' && (
+            <motion.div
+              key="digital-transformation"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.4 }}
+              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <div className="lg:col-span-6 space-y-6">
+                  <div>
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
+                      SEO & GEO Services (Pixis.AI)
+                    </span>
+                    <h3 className="text-3xl font-black text-white mt-1 font-display">
+                      AI Digital <span className="text-[#85cc38]">Transformation</span>
+                    </h3>
+                    <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                      Accelerate brand reach and conversion through Generative Engine Optimization (GEO), omnichannel automation, and high-impact AI digital marketing.
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {[
+                      { 
+                        title: "SEO & GEO Services (Pixis.AI)", 
+                        desc: "Next-generation Generative Engine Optimization ensuring your enterprise is recommended directly by ChatGPT, Google Gemini, Perplexity, and Copilot." 
+                      },
+                      { 
+                        title: "Omnichannel Social Media Automation", 
+                        desc: "Automated 24/7 reply engines across Meta (Facebook & Instagram) comments, direct messages, and brand mentions." 
+                      },
+                      { 
+                        title: "Google My Business (GMB) Automation", 
+                        desc: "Automated review reply engine, localized SEO blog publishing, and map pack rank elevation." 
+                      },
+                      { 
+                        title: "WhatsApp Cloud API & Conversational Funnels", 
+                        desc: "Official Meta-verified WhatsApp Business Cloud API with broadcast sequences, product catalogs, and instant payment links." 
+                      },
+                    ].map((item, idx) => (
+                      <div 
+                        key={idx} 
+                        className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5 text-slate-200"
+                      >
+                        <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
+                          {idx + 1}
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-white">{item.title}</div>
+                          <div className="text-xs text-slate-300 mt-1 leading-relaxed">{item.desc}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-2">
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                    >
+                      <span>Inquire for AI Digital Transformation</span>
+                      <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right: Omnichannel & GEO Telemetry */}
+                <div className="lg:col-span-6 glass-panel border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <h4 className="text-base font-bold text-white flex items-center gap-2">
+                      <Sparkles size={16} className="text-[#85cc38]" />
+                      <span>Omnichannel AI Coverage</span>
+                    </h4>
+                    <span className="text-[11px] text-[#85cc38] font-bold">2026 Engine Ready</span>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="text-xs font-bold text-[#85cc38] mb-1">Pixis.AI (GEO Engine)</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Proprietary knowledge-graph injection for LLM recommendation indexing and brand citation.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="text-xs font-bold text-white mb-1">Meta Social Auto-Reply</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Zero lead leakage on Instagram & Facebook DMs, ad comment qualification, and story mentions.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="text-xs font-bold text-white mb-1">Official WhatsApp Cloud</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Verified green-tick multi-agent inbox, automated notifications, and interactive quick-reply flows.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="text-xs font-bold text-white mb-1">GMB Review Booster</div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        NFC review standees, intelligent sentiment-based replies, and 5-star reputation management.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-[#72bf44]/10 border border-[#72bf44]/30 space-y-2 mt-4">
+                    <div className="text-xs font-bold text-[#85cc38] uppercase tracking-wider flex items-center gap-2">
+                      <BarChart3 size={15} />
+                      <span>Proven Performance Metrics</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-2 pt-1 text-center">
+                      <div>
+                        <div className="text-lg font-black text-white font-display">+30%</div>
+                        <div className="text-[10px] text-slate-300">AI Visibility</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-black text-white font-display">4.4x</div>
+                        <div className="text-[10px] text-slate-300">Conversion Rate</div>
+                      </div>
+                      <div>
+                        <div className="text-lg font-black text-white font-display">3x</div>
+                        <div className="text-[10px] text-slate-300">Lower CPL</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          )}
+
+          {/* TAB 3: WEB APPLICATION DEVELOPMENT (AI POWERED - IMPORTANT HIGHLIGHT) */}
           {activeTab === 'web-app-dev' && (
             <motion.div
               key="web-app-dev"
@@ -62,49 +340,78 @@ export default function ServicesSection() {
               transition={{ duration: 0.4 }}
               className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-6 space-y-6">
                   <div>
-                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
-                      Full-Cycle Engineering
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider px-3 py-1 rounded-full bg-[#72bf44]/20 border border-[#72bf44]/30 inline-block">
+                      AI Powered — Important Highlight
                     </span>
-                    <h3 className="text-3xl font-black text-white mt-1 font-display">
+                    <h3 className="text-3xl font-black text-white mt-3 font-display">
                       You Dream It. <span className="text-[#85cc38]">We Code It.</span>
                     </h3>
                     <p className="text-slate-300 text-sm mt-2 leading-relaxed">
-                      Your vision, our expertise, one powerful partnership. We build fast, responsive, and secure digital applications engineered for high performance.
+                      Your vision, our engineering expertise, one powerful partnership. We craft fast, responsive, and secure digital web and mobile applications supercharged with AI.
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-[#85cc38] font-bold text-xs mb-1">Fast & Responsive</div>
-                      <div className="text-[11px] text-slate-300">Sub-second load times & 60fps animations.</div>
+                  {/* 4 Pillars from Page 5 */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#72bf44]/50 transition-colors">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <Globe size={16} className="text-[#85cc38]" />
+                        <span className="text-xs font-bold text-white">Static Website Dev</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Sub-second load times, high-converting corporate portals, and SEO-engineered landing pages built for peak lead generation.
+                      </p>
                     </div>
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-white font-bold text-xs mb-1">Custom-Built</div>
-                      <div className="text-[11px] text-slate-300">Tailored for your brand, not templates.</div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#72bf44]/50 transition-colors">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <Database size={16} className="text-[#85cc38]" />
+                        <span className="text-xs font-bold text-white">Dynamic Website Dev</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Complex data-driven cloud web platforms, custom SaaS architectures, role-based dashboards, and high-throughput APIs.
+                      </p>
                     </div>
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-white font-bold text-xs mb-1">Secure by Design</div>
-                      <div className="text-[11px] text-slate-300">Enterprise data privacy from Day 1.</div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#72bf44]/50 transition-colors">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <Layers size={16} className="text-[#85cc38]" />
+                        <span className="text-xs font-bold text-white">E-Commerce Apps</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Custom shopping carts, payment gateway integrations (Stripe, UPI, Telr), real-time inventory synchronization, and multi-vendor systems.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#72bf44]/50 transition-colors">
+                      <div className="flex items-center gap-2 mb-1.5">
+                        <Smartphone size={16} className="text-[#85cc38]" />
+                        <span className="text-xs font-bold text-white">Mobile Apps Dev</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Native iOS (Swift), Android (Kotlin), and cross-platform Flutter mobile applications with offline sync and push notifications.
+                      </p>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">Capabilities:</div>
+                  {/* Capabilities checklist */}
+                  <div className="space-y-2 pt-1">
+                    <div className="text-xs font-bold text-slate-300 uppercase tracking-wider">AI Engineering Highlights:</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {[
-                        "Web & Cloud Applications",
-                        "Native iOS & Android Mobile Apps",
-                        "UI/UX Research & Prototype Design",
-                        "Headless E-Commerce Solutions",
-                        "API & Microservices Architecture",
-                        "Progressive Web Apps (PWA)"
+                        "AI Copilot & Code Generation Integration",
+                        "UI/UX Research & Interactive Prototyping",
+                        "Headless & Microservices Cloud Architecture",
+                        "Continuous Integration & Automated Testing (CI/CD)",
+                        "Progressive Web Apps (PWA) with Offline Cache",
+                        "Enterprise SLA & 99.9% Uptime Hosting"
                       ].map((cap, i) => (
                         <div key={i} className="flex items-center gap-2 text-xs text-slate-200 font-medium p-1">
-                          <CheckCircle2 size={15} className="text-[#85cc38]" />
+                          <CheckCircle2 size={15} className="text-[#85cc38] shrink-0" />
                           <span>{cap}</span>
                         </div>
                       ))}
@@ -136,16 +443,16 @@ export default function ServicesSection() {
                     {[
                       { name: 'React', type: 'Frontend' },
                       { name: 'Next.js', type: 'Fullstack' },
-                      { name: 'Flutter', type: 'Mobile' },
+                      { name: 'Flutter', type: 'Cross-Mobile' },
                       { name: 'Kotlin', type: 'Android' },
-                      { name: 'Python', type: 'AI / Backend' },
+                      { name: 'Swift', type: 'iOS' },
+                      { name: 'Python', type: 'AI & Data' },
                       { name: 'Django', type: 'Backend' },
-                      { name: 'Laravel', type: 'PHP API' },
                       { name: 'Node.js', type: 'Microservices' },
-                      { name: 'MongoDB', type: 'NoSQL' },
-                      { name: 'PostgreSQL', type: 'SQL' },
-                      { name: 'AWS Cloud', type: 'Infra' },
-                      { name: 'Azure', type: 'Cloud' },
+                      { name: 'Laravel', type: 'PHP API' },
+                      { name: 'PostgreSQL', type: 'Relational DB' },
+                      { name: 'MongoDB', type: 'NoSQL DB' },
+                      { name: 'AWS Cloud', type: 'Infra & DevOps' },
                     ].map((tech, idx) => (
                       <div 
                         key={idx} 
@@ -156,178 +463,162 @@ export default function ServicesSection() {
                       </div>
                     ))}
                   </div>
+
+                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 mt-4 space-y-2">
+                    <div className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
+                      Turnkey Enterprise Delivery
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      Every web and app build undergoes rigorous automated security screening, performance optimization, and SEO readiness before go-live.
+                    </p>
+                  </div>
                 </div>
 
               </div>
             </motion.div>
           )}
 
-          {/* Tab 2: AI-Powered Marketing Suite */}
-          {activeTab === 'digital-transformation' && (
+          {/* TAB 4: AI AGENTS & AI CHATBOTS */}
+          {activeTab === 'ai-agents-chatbots' && (
             <motion.div
-              key="digital-transformation"
+              key="ai-agents-chatbots"
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
               className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
                 <div className="lg:col-span-6 space-y-6">
                   <div>
-                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
-                      Omni-Channel Automation
+                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider px-3 py-1 rounded-full bg-[#72bf44]/20 border border-[#72bf44]/30 inline-block">
+                      anvex.ai & Autonomous Workforce
                     </span>
-                    <h3 className="text-3xl font-black text-white mt-1 font-display">
-                      AI-Powered Marketing & <span className="text-[#85cc38]">Digital Growth</span>
+                    <h3 className="text-3xl font-black text-white mt-3 font-display">
+                      AI Agents & <span className="text-[#85cc38]">AI Chatbots</span>
                     </h3>
                     <p className="text-slate-300 text-sm mt-2 leading-relaxed">
-                      Automate conversations, manage customer inquiries 24/7 across Meta & Google, and drive compounding brand reach with AI agents.
+                      Designing, training, and deploying purpose-built autonomous AI agents that reason, analyze data, take action, and operate 24/7 across critical business domains.
                     </p>
                   </div>
 
+                  {/* 5 Pillars from Page 5 */}
                   <div className="space-y-3">
                     {[
-                      { title: "Social Media Management & Automation", desc: "Auto reply to Facebook & Instagram comments, DMs, and story mentions." },
-                      { title: "Google My Business (GMB) Automation", desc: "Automated review reply engine, 150+ monthly localized blogs, QR review standees." },
-                      { title: "SEO & SMO Services Automation", desc: "Combined generative engine optimization (GEO) and classical organic positioning." },
-                      { title: "Brand Identity & Creative Design", desc: "Logos, corporate style guides, marketing collaterals, and high-impact digital creatives." },
-                    ].map((item, idx) => (
+                      {
+                        title: "Building Intelligent Custom Agent",
+                        desc: "Domain-specific fine-tuned LLMs trained on company internal knowledge bases, ERP data, and standard operating procedures (SOPs)."
+                      },
+                      {
+                        title: "Business Analyst Agent",
+                        desc: "Real-time market intelligence, automated competitor telemetry scraping, financial metric summaries, and automated executive reporting."
+                      },
+                      {
+                        title: "Build Stock / Crypto / Forex Agent",
+                        desc: "Algorithmic sentiment analysis, technical telemetry, high-frequency pattern detection, and continuous market monitoring."
+                      },
+                      {
+                        title: "Build Voice Calling Agent",
+                        desc: "Ultra-low latency (<450ms) telephony conversational AI with natural tone modulation for inbound receptionist support and outbound follow-up calls."
+                      },
+                      {
+                        title: "Build Digital AI Employees (BigDot)",
+                        desc: "24/7 autonomous digital staff capable of handling complex operations, CRM updates, customer onboarding, and technical ticketing without human intervention."
+                      }
+                    ].map((agent, idx) => (
                       <div 
                         key={idx} 
-                        className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3 text-slate-200"
+                        className="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-start gap-3.5 hover:border-[#72bf44]/50 transition-colors"
                       >
-                        <div className="w-7 h-7 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
+                        <div className="w-8 h-8 rounded-xl bg-[#72bf44]/20 text-[#85cc38] flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
                           {idx + 1}
                         </div>
                         <div>
-                          <div className="text-sm font-bold text-white">{item.title}</div>
-                          <div className="text-xs text-slate-400 mt-0.5">{item.desc}</div>
+                          <div className="text-sm font-bold text-white">{agent.title}</div>
+                          <div className="text-xs text-slate-300 mt-1 leading-relaxed">{agent.desc}</div>
                         </div>
                       </div>
                     ))}
                   </div>
-                </div>
 
-                <div className="lg:col-span-6 glass-panel border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
-                  <h4 className="text-base font-bold text-white mb-2">Omnichannel AI Coverage</h4>
-                  
-                  <div className="grid grid-cols-2 gap-3.5">
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-xs font-bold text-white mb-1">Facebook Automation</div>
-                      <p className="text-[11px] text-slate-400">Auto replies, ad comment lead routing, and chatbot qualification.</p>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-xs font-bold text-white mb-1">Instagram Automation</div>
-                      <p className="text-[11px] text-slate-400">Story mention replies, DM keyword funnels, and anti-spam protection.</p>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-xs font-bold text-white mb-1">WhatsApp Cloud API</div>
-                      <p className="text-[11px] text-slate-400">Official Meta verified business API with broadcast and catalog flows.</p>
-                    </div>
-
-                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                      <div className="text-xs font-bold text-white mb-1">Google My Business</div>
-                      <p className="text-[11px] text-slate-400">Automated review boosting, map pack rank climbing, and local SEO.</p>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-xs text-[#85cc38] font-bold">99.9% Automation Uptime</span>
+                  <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="px-6 py-2.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs flex items-center gap-1.5"
+                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
                     >
-                      <Phone size={14} />
-                      <span>Inquire for Marketing AI</span>
+                      <span>Deploy Autonomous AI Agents</span>
+                      <ArrowRight size={15} />
                     </Link>
                   </div>
                 </div>
 
-              </div>
-            </motion.div>
-          )}
+                {/* Right: AI Agent Cognitive Architecture */}
+                <div className="lg:col-span-6 glass-panel rounded-3xl p-6 sm:p-8 space-y-4 border border-white/10">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <h4 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <Bot size={16} className="text-[#85cc38]" />
+                      <span>Cognitive Agent Architecture</span>
+                    </h4>
+                    <span className="text-[11px] text-[#85cc38] font-mono font-bold">Multi-Modal Core</span>
+                  </div>
 
-          {/* Tab 3: Academic - Industry 4.0 Services */}
-          {activeTab === 'academic-industry' && (
-            <motion.div
-              key="academic-industry"
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.4 }}
-              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <div className="lg:col-span-6 space-y-6">
-                  <div>
-                    <span className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
-                      Education & Industry Collaboration
-                    </span>
-                    <h3 className="text-3xl font-black text-white mt-1 font-display">
-                      Academic - Industry <span className="text-[#85cc38]">Services</span>
-                    </h3>
-                    <p className="text-slate-300 text-sm mt-2 leading-relaxed">
-                      Accredited by AICTE and collaborating with top engineering institutions to incubate IEEE projects, student internships, and faculty development.
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-xs">
+                        <MessageSquare size={15} className="text-[#85cc38]" />
+                        <span>Conversational Intelligence</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Multi-turn contextual reasoning, sentiment tracking, and flawless multilingual language generation.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-xs">
+                        <Phone size={15} className="text-[#85cc38]" />
+                        <span>Voice Telephony & SIP</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Sub-second duplex conversational voice agent directly integrated with enterprise PBX and Twilio SIP trunks.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-xs">
+                        <LineChart size={15} className="text-[#85cc38]" />
+                        <span>Financial & Forex Feeds</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Live price streaming, sentiment analysis from financial news, and autonomous algorithmic execution logic.
+                      </p>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                      <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-xs">
+                        <Cpu size={15} className="text-[#85cc38]" />
+                        <span>Digital Employee (BigDot)</span>
+                      </div>
+                      <p className="text-[11px] text-slate-300 leading-relaxed">
+                        Full workflow automation across ERP, CRM, emails, and internal messaging tools with audit logging.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-[#72bf44]/10 border border-[#72bf44]/30 space-y-2 mt-4">
+                    <div className="text-xs font-bold text-[#85cc38] uppercase tracking-wider">
+                      Enterprise Security & Privacy
+                    </div>
+                    <p className="text-xs text-slate-300 leading-relaxed">
+                      All custom agents can be hosted on isolated private cloud infrastructure with strict data isolation, ensuring zero training data leakage to public models.
                     </p>
                   </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                    {[
-                      { title: "Student Internships", desc: "Live corporate sprint participation with industry architect mentorship." },
-                      { title: "Academic IEEE Projects", desc: "End-to-end guidance for final year capstone & research publications." },
-                      { title: "Student Training (STPs)", desc: "Hands-on bootcamps in AI/ML, Cloud DevOps, and Blockchain." },
-                      { title: "Faculty Programs (FDPs)", desc: "Upskilling professors and lecturers on next-gen tech stacks." },
-                    ].map((col, idx) => (
-                      <div 
-                        key={idx} 
-                        className="p-4 rounded-2xl bg-white/5 border border-white/10"
-                      >
-                        <div className="text-xs font-bold text-white mb-1">{col.title}</div>
-                        <div className="text-[11px] text-slate-400">{col.desc}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right: Academic Disciplines */}
-                <div className="lg:col-span-6 glass-panel border border-white/10 rounded-3xl p-6 sm:p-8 space-y-4">
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wider">
-                    Academic Disciplines & Degrees Supported
-                  </h4>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-center text-xs">
-                    {[
-                      "CSE (Computer Science)",
-                      "Artificial Intelligence & ML",
-                      "Data Science & Analytics",
-                      "Cyber Security & Forensics",
-                      "Blockchain & Web3",
-                      "ISE (Info Science)",
-                      "ECE (Electronics)",
-                      "B.E / B.Tech / M.Tech",
-                      "BCA / MCA / B.Sc",
-                      "Polytechnic / Diploma",
-                      "MBA / BBA Tech Mgmt",
-                      "Ph.D Research Labs"
-                    ].map((discipline, idx) => (
-                      <div 
-                        key={idx} 
-                        className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-200 font-medium shadow-sm hover:border-[#72bf44]/50 transition-colors"
-                      >
-                        {discipline}
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
               </div>
             </motion.div>
           )}
+
         </AnimatePresence>
 
       </div>

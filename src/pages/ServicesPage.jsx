@@ -20,13 +20,13 @@ export default function ServicesPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#72bf44]/20 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-4 border border-[#72bf44]/40 shadow-sm">
             <Cpu size={15} />
-            <span>Consulting & Engineering</span>
+            <span>End-to-End Enterprise Capabilities</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-white font-display tracking-wide text-left">
             Our Enterprise <span className="bg-gradient-to-r from-[#85cc38] to-[#72bf44] bg-clip-text text-transparent">Services</span>
           </h1>
           <p className="mt-4 text-slate-300 text-base sm:text-lg max-w-3xl font-normal leading-relaxed text-left">
-            From "You Dream It. We Code It." web & mobile engineering to AI marketing automation and university faculty development programs.
+            From full-cycle AI-powered web and mobile engineering to 24/7 SOC cyber defense, Pixis.AI generative search engine optimization, and autonomous multi-agent systems.
           </p>
         </motion.div>
       </div>

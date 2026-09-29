@@ -21,14 +21,14 @@ export default function Footer({ onOpenCertModal }) {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           
-          {/* Col 1: Brand with Illuminated Logo */}
+          {/* Col 1: Brand with Illuminated Logo (Transparent Background per specification) */}
           <div className="lg:col-span-2 space-y-4">
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-12 h-12 rounded-xl bg-white/95 p-1.5 shadow-2xl flex items-center justify-center border-2 border-[#72bf44] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(114,191,68,0.5)] transition-all">
+              <div className="w-10 h-10 rounded-xl bg-transparent p-0.5 shadow-xl flex items-center justify-center border-2 border-[#72bf44] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(114,191,68,0.5)] transition-all overflow-hidden shrink-0">
                 <img 
                   src="/assets/zetacoding_logo_transparent.png" 
                   alt="Zetacoding Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full max-h-7 max-w-7 object-contain filter drop-shadow"
                   onError={(e) => {
                     e.target.src = "/assets/page_2_img_1.png";
                   }}
@@ -52,16 +52,6 @@ export default function Footer({ onOpenCertModal }) {
               <div><strong className="text-white font-bold">India:</strong> {companyInfo.legalNames?.india || companyInfo.legalEntities?.indiaHQ?.name}</div>
               <div><strong className="text-white font-bold">UAE:</strong> {companyInfo.legalNames?.uae || companyInfo.legalEntities?.uaeLLC?.name}</div>
             </div>
-
-            <div className="pt-2 flex items-center gap-2">
-              <button
-                onClick={onOpenCertModal}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#72bf44]/15 hover:bg-[#72bf44] text-[#85cc38] hover:text-slate-950 border border-[#72bf44]/40 text-xs font-bold transition-all shadow-md group"
-              >
-                <ShieldCheck size={14} className="group-hover:scale-110 transition-transform" />
-                <span>Verified Legal Licenses & ISO</span>
-              </button>
-            </div>
           </div>
 
           {/* Col 2: Key Platforms */}
@@ -71,13 +61,13 @@ export default function Footer({ onOpenCertModal }) {
               <span>Key Platforms</span>
             </h4>
             <ul className="space-y-2 text-slate-400 font-medium">
-              <li><Link to="/geo-ai" className="hover:text-[#85cc38] transition-colors">GEO (AI Visibility)</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">anvex.ai Autonomous Agents</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Cloud ERP & AlignBooks</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">SAP Business One</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">TMBill Restaurant Tech</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Autorox Garage OS</Link></li>
-              <li><Link to="/products/digital-business-card" className="hover:text-[#85cc38] transition-colors">NFC Digital Business Cards</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">CIPHER Web Security</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">AlignBooks Cloud ERP</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Prospect AI Lead Engine</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Restaurant OS (TMBill)</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Garage OS (AutoFox)</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Digital Business Cards</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Smart Ordering</Link></li>
             </ul>
           </div>
 
@@ -87,13 +77,13 @@ export default function Footer({ onOpenCertModal }) {
               <span>Pages & Services</span>
             </h4>
             <ul className="space-y-2 text-slate-400 font-medium">
-              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">Web & Mobile App Dev</Link></li>
-              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">AI Marketing Automation</Link></li>
-              <li><Link to="/academic-mous" className="hover:text-[#85cc38] transition-colors">IEEE Projects Support</Link></li>
-              <li><Link to="/academic-mous" className="hover:text-[#85cc38] transition-colors">Student Training (STPs)</Link></li>
-              <li><Link to="/academic-mous" className="hover:text-[#85cc38] transition-colors">Faculty Programs (FDPs)</Link></li>
-              <li><Link to="/certifications" className="hover:text-[#85cc38] transition-colors">ISO 9001:2015 & DED</Link></li>
-              <li><Link to="/about" className="hover:text-[#85cc38] transition-colors">Our Journey (2021-2026)</Link></li>
+              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">Cyber Security Services</Link></li>
+              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">AI Digital Transformation</Link></li>
+              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">Web Application Development</Link></li>
+              <li><Link to="/services" className="hover:text-[#85cc38] transition-colors">AI Agents & Chatbots</Link></li>
+              <li><Link to="/blogs" className="hover:text-[#85cc38] transition-colors">Blogs & Insights</Link></li>
+              <li><Link to="/about" className="hover:text-[#85cc38] transition-colors">About Us & Journey</Link></li>
+              <li><Link to="/contact" className="hover:text-[#85cc38] transition-colors">Contact Global Hubs</Link></li>
             </ul>
           </div>
 
@@ -106,30 +96,30 @@ export default function Footer({ onOpenCertModal }) {
             <div className="space-y-3 text-[11px] text-slate-400">
               <div>
                 <span className="text-white font-bold block text-xs">Bengaluru HQ (India)</span>
-                <span className="block">Yelahanka, Bengaluru - 560064</span>
-                <a href={`tel:${companyInfo.phones.india}`} className="block text-[#85cc38] font-mono hover:underline mt-0.5">
-                  {companyInfo.phones.india}
+                <span className="block text-slate-300">Bengaluru - 560064</span>
+                <a href="tel:+918867845719" className="block text-[#85cc38] font-mono font-bold hover:underline mt-0.5">
+                  Contact no. +91 8867845719
                 </a>
               </div>
 
               <div>
                 <span className="text-white font-bold block text-xs">Dubai Office (UAE)</span>
                 <span className="block">Burj Al Nahar Complex, Deira, Dubai</span>
-                <a href={`tel:${companyInfo.phones.uae}`} className="block text-[#85cc38] font-mono hover:underline mt-0.5">
+                <a href={`tel:${companyInfo.phones.uae}`} className="block text-[#38bdf8] font-mono hover:underline mt-0.5">
                   {companyInfo.phones.uae}
                 </a>
               </div>
 
               <div className="pt-2 space-y-1.5">
                 <a 
-                  href={`mailto:${companyInfo.email}`} 
-                  className="flex items-center gap-1.5 text-slate-300 hover:text-[#85cc38] transition-colors"
+                  href="mailto:infor@zetacoding.com" 
+                  className="flex items-center gap-1.5 text-slate-200 hover:text-[#85cc38] transition-colors font-medium"
                 >
                   <Mail size={13} className="text-[#85cc38]" />
-                  <span>{companyInfo.email}</span>
+                  <span>Mail. infor@zetacoding.com</span>
                 </a>
                 <a 
-                  href={companyInfo.url} 
+                  href="https://www.zetacoding.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-slate-300 hover:text-[#85cc38] transition-colors"
@@ -143,31 +133,20 @@ export default function Footer({ onOpenCertModal }) {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
-          <div>
-            © {new Date().getFullYear()} ZETACODING (Zetacoding Innovative Solutions & Zetacoding Information Technology L.L.C). All rights reserved.
+        {/* Bottom Bar: Bold & Centered Copyright (Bottom links removed per specification) */}
+        <div className="pt-8 border-t border-white/10 flex flex-col items-center justify-center gap-3 text-center">
+          <div className="text-xs sm:text-sm font-bold text-white tracking-wide">
+            &copy; {new Date().getFullYear()} ZETACODING (Zetacoding Innovative Solutions &amp; Zetacoding Information Technology L.L.C). All rights reserved.
           </div>
           
-          <div className="flex items-center gap-4 text-slate-300">
-            <button
-              onClick={onOpenCertModal}
-              className="hover:text-[#85cc38] transition-colors font-medium"
-            >
-              Legal Licenses & Tax Compliance
-            </button>
-            <span>•</span>
-            <Link to="/about" className="hover:text-[#85cc38] transition-colors font-medium">About Us</Link>
-            <span>•</span>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white transition-all flex items-center gap-1 shadow-md"
-              aria-label="Back to top"
-            >
-              <span>Top</span>
-              <ArrowUp size={12} />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1 text-[11px] font-bold text-[#85cc38] hover:text-white transition-colors"
+            aria-label="Back to top"
+          >
+            <span>Back to top</span>
+            <ArrowUp size={12} />
+          </button>
         </div>
 
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { 
-  MapPin, Phone, Mail, MessageSquare, Send, 
+  MapPin, Phone, Mail, MessageSquare, 
   CheckCircle2, Globe, Clock, Sparkles, ShieldCheck, Zap, Award
 } from 'lucide-react';
 import { officeLocations, companyInfo } from '../data/companyData';
@@ -14,19 +14,14 @@ export default function ContactAndLocations() {
     email: '',
     phone: '',
     branch: 'Bengaluru (Headquarters)',
-    serviceInterest: 'Enterprise ERP & Cloud Solutions',
+    serviceInterest: 'Cyber Security Suite & CIPHER',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
-  const handleWhatsAppDirect = () => {
+  const handleWhatsAppDirect = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
     const text = encodeURIComponent(
-      `Hello ZETACODING team,\nMy Name: ${formData.name || 'Visitor'}\nInterested in: ${formData.serviceInterest}\nPreferred Branch: ${formData.branch}\nMessage: ${formData.message || 'I would like to discuss a project.'}`
+      `Hello ZETACODING team,\n• Name: ${formData.name || 'Visitor'}\n• Phone: ${formData.phone || 'Not provided'}\n• Email: ${formData.email || 'Not provided'}\n• Solution of Interest: ${formData.serviceInterest}\n• Preferred Branch: ${formData.branch}\n• Project Scope: ${formData.message || 'I would like to request technical consultation.'}`
     );
     const targetNumber = formData.branch.includes('Dubai') 
       ? companyInfo.whatsapp.uae 
@@ -48,7 +43,7 @@ export default function ContactAndLocations() {
             Contact Our <span className="text-[#85cc38]">Global Hubs</span>
           </h2>
           <p className="mt-2 text-slate-300 text-base sm:text-lg font-normal max-w-3xl">
-            Reach out to our engineering and consulting teams in Bengaluru, Mangaluru, or Dubai for rapid project scoping and technical inquiries.
+            Reach out to our engineering and consulting teams in Bengaluru or Dubai for rapid project scoping and technical inquiries.
           </p>
         </AnimatedSection>
 
@@ -89,7 +84,7 @@ export default function ContactAndLocations() {
 
                   <div className="flex items-center gap-2.5">
                     <Phone size={15} className="text-[#85cc38] shrink-0" />
-                    <a href={`tel:${loc.phone}`} className="hover:text-[#85cc38] transition-colors font-mono font-bold text-white">
+                    <a href={`tel:${loc.phone.replace(/[^+\d]/g, '')}`} className="hover:text-[#85cc38] transition-colors font-mono font-bold text-white">
                       {loc.phone}
                     </a>
                   </div>
@@ -133,143 +128,115 @@ export default function ContactAndLocations() {
                   Request a Technical Consultation or Scoping
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                  Fill out the form below and our regional lead engineer will respond within 4 hours.
+                  Fill out the details below to connect directly with our regional engineering team on WhatsApp.
                 </p>
               </div>
 
-              {submitted ? (
-                <div className="p-8 rounded-2xl bg-[#72bf44]/15 border border-[#72bf44]/40 text-left space-y-3 shadow-md">
-                  <CheckCircle2 size={46} className="text-[#85cc38] animate-bounce" />
-                  <h4 className="text-xl font-black text-white">Thank You for Reaching Out!</h4>
-                  <p className="text-sm text-slate-200 max-w-md">
-                    Your request has been routed to our <strong>{formData.branch}</strong> team. We will contact you at <strong>{formData.email || formData.phone}</strong> shortly.
-                  </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-2 px-6 py-3 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-md"
-                  >
-                    Send Another Inquiry
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                        Your Name *
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Enter your full name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="name@company.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                        Phone / WhatsApp Number
-                      </label>
-                      <input
-                        type="tel"
-                        placeholder="+91 / +971"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                        Preferred Office / Region
-                      </label>
-                      <select
-                        value={formData.branch}
-                        onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-[#0c101a] border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm font-medium"
-                      >
-                        <option value="Bengaluru (Headquarters)">Bengaluru HQ (India)</option>
-                        <option value="Dubai (Corporate Branch)">Dubai LLC (U.A.E)</option>
-                        <option value="Mangaluru (Regional Center)">Mangaluru Center (India)</option>
-                      </select>
-                    </div>
+              <form onSubmit={handleWhatsAppDirect} className="space-y-4">
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your full name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
+                    />
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                      Platform / Solution of Interest
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="name@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                      Phone / WhatsApp Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+91 / +971"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                      Preferred Office / Region
                     </label>
                     <select
-                      value={formData.serviceInterest}
-                      onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
+                      value={formData.branch}
+                      onChange={(e) => setFormData({ ...formData, branch: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#0c101a] border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm font-medium"
                     >
-                      <option value="GEO (Generative Engine Optimization)">GEO (AI Visibility / ChatGPT / Gemini)</option>
-                      <option value="AlignBooks Cloud ERP">AlignBooks Cloud ERP (VAT & GST)</option>
-                      <option value="SAP Business One">SAP Business One Implementation</option>
-                      <option value="anvex.ai Autonomous Agents">anvex.ai Voice / Vision / Agents</option>
-                      <option value="ZetaWap Cloud CRM">ZetaWap WhatsApp Cloud CRM</option>
-                      <option value="TMBill Restaurant POS">TMBill Restaurant & Cloud Kitchen OS</option>
-                      <option value="Autorox Smart Garage">Autorox Garage Management System</option>
-                      <option value="Cybersecurity & Defense">CrowdStrike / Cyber Security Suite</option>
-                      <option value="Academic MOU & Training">Academic Institution MOU / Student Training</option>
-                      <option value="Custom Web / Mobile Engineering">Custom Web & Mobile Development</option>
+                      <option value="Bengaluru (Headquarters)">Bengaluru HQ (India)</option>
+                      <option value="Dubai (Corporate Branch)">Dubai LLC (U.A.E)</option>
+                      <option value="Mangaluru (Regional Center)">Mangaluru Center (India)</option>
                     </select>
                   </div>
+                </div>
 
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                      Project Scope or Requirements
-                    </label>
-                    <textarea
-                      rows="3"
-                      placeholder="Tell us about your business requirements, timeline, or current challenges..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
-                    ></textarea>
-                  </div>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                    Platform / Solution of Interest
+                  </label>
+                  <select
+                    value={formData.serviceInterest}
+                    onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-[#0c101a] border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm font-medium"
+                  >
+                    <option value="Cyber Security Products (CIPHER & Sachet SOC)">Cyber Security Products (CIPHER & Sachet SOC)</option>
+                    <option value="ERP Solutions (AlignBooks across 5 Editions)">ERP Solutions (AlignBooks across 5 Editions)</option>
+                    <option value="CRM Solutions (Prospect AI & Tech Free)">CRM Solutions (Prospect AI & Tech Free)</option>
+                    <option value="Custom Software (Garage, Restaurant, Animal, Saloon, Expense)">Custom Software Solutions</option>
+                    <option value="Digital Products (3D NFC Business Card & Smart Ordering)">Digital Products (3D NFC Business Card & Smart Ordering)</option>
+                    <option value="Cyber Security Services (VAPT & SOC Defense)">Cyber Security Services (VAPT & SOC Defense)</option>
+                    <option value="AI Digital Transformation (Pixis.AI / GEO & SEO)">AI Digital Transformation (Pixis.AI / GEO & SEO)</option>
+                    <option value="Web & Mobile Application Development">Web & Mobile Application Development</option>
+                    <option value="AI Agents & Autonomous Workforce (BigDot)">AI Agents & Autonomous Workforce (BigDot)</option>
+                  </select>
+                </div>
 
-                  <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                    <button
-                      type="submit"
-                      className="w-full sm:w-auto px-8 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs sm:text-sm shadow-xl transition-all flex items-center justify-center gap-2"
-                    >
-                      <Send size={15} />
-                      <span>Submit Inquiry to Engineering</span>
-                    </button>
+                <div>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
+                    Project Scope or Requirements
+                  </label>
+                  <textarea
+                    rows="3"
+                    placeholder="Tell us about your business requirements, timeline, or current challenges..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 text-white text-xs sm:text-sm focus:outline-none focus:border-[#72bf44] shadow-sm transition-all font-medium"
+                  ></textarea>
+                </div>
 
-                    <button
-                      type="button"
-                      onClick={handleWhatsAppDirect}
-                      className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 border border-white/20 shadow-md"
-                    >
-                      <MessageSquare size={15} className="text-[#85cc38]" />
-                      <span>Inquire on WhatsApp Direct</span>
-                    </button>
-                  </div>
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    className="w-full sm:w-auto px-8 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs sm:text-sm shadow-xl transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    <MessageSquare size={16} className="text-slate-950" />
+                    <span>Inquire on WhatsApp Direct</span>
+                  </button>
+                </div>
 
-                </form>
-              )}
+              </form>
             </div>
 
             {/* Right Column: High-Trust SLA & Fast Contact Card */}
@@ -314,14 +281,20 @@ export default function ContactAndLocations() {
               <div className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2.5 shadow-sm">
                 <div className="text-[11px] uppercase tracking-wider text-[#85cc38] font-bold">Direct Hotlines:</div>
                 <div className="flex items-center justify-between text-xs text-slate-300 font-medium">
-                  <span>🇮🇳 India Hub:</span>
-                  <a href={`tel:${companyInfo.phones.india}`} className="font-mono text-white font-bold hover:text-[#85cc38]">
+                  <span>🇮🇳 Bengaluru HQ:</span>
+                  <a href={`tel:${companyInfo.phones.india.replace(/[^+\d]/g, '')}`} className="font-mono text-white font-bold hover:text-[#85cc38]">
                     {companyInfo.phones.india}
                   </a>
                 </div>
                 <div className="flex items-center justify-between text-xs text-slate-300 font-medium">
+                  <span>🇮🇳 Mangaluru Desk:</span>
+                  <a href={`tel:${companyInfo.phones.mangaluru.replace(/[^+\d]/g, '')}`} className="font-mono text-white font-bold hover:text-[#85cc38]">
+                    {companyInfo.phones.mangaluru}
+                  </a>
+                </div>
+                <div className="flex items-center justify-between text-xs text-slate-300 font-medium">
                   <span>🇦🇪 Dubai Hub:</span>
-                  <a href={`tel:${companyInfo.phones.uae}`} className="font-mono text-white font-bold hover:text-[#85cc38]">
+                  <a href={`tel:${companyInfo.phones.uae.replace(/[^+\d]/g, '')}`} className="font-mono text-white font-bold hover:text-[#85cc38]">
                     {companyInfo.phones.uae}
                   </a>
                 </div>

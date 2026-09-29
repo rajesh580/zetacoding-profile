@@ -27,7 +27,7 @@ export default function InteractiveTechRadar() {
       features: [
         'Voice Qualification Bots with human-like telephony cadence',
         'Computer Vision automated PPE, defect & hazard monitoring',
-        'ZetaWap CRM Meta Verified WhatsApp Cloud Automation',
+        'Prospect AI Lead Qualification & CRM Automation',
         'Generative Engine Optimization (GEO) for AI citations'
       ],
       link: '/products/anvex-ai'
@@ -118,17 +118,28 @@ export default function InteractiveTechRadar() {
 
   return (
     <section className="w-full py-12 text-slate-100">
-      <div className="w-full text-left mb-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#72bf44]/15 border border-[#72bf44]/30 text-[#85cc38] text-xs font-mono font-bold uppercase tracking-wider mb-3">
-          <Terminal size={14} className="text-[#85cc38]" />
-          <span>Interactive Architecture Matrix</span>
+      <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-4 text-left mb-8">
+        <div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#72bf44]/15 border border-[#72bf44]/30 text-[#85cc38] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+            <Terminal size={14} className="text-[#85cc38]" />
+            <span>Interactive Architecture Matrix</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
+            Multi-Domain <span className="text-[#85cc38]">Enterprise Capabilities</span>
+          </h2>
+          <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-3xl">
+            Explore our proprietary and strategic engineering pillars. Switch tabs below to inspect system architecture, verified SLAs, and platform scope.
+          </p>
         </div>
-        <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
-          Multi-Domain <span className="text-[#85cc38]">Enterprise Capabilities</span>
-        </h2>
-        <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-3xl">
-          Explore our proprietary and strategic engineering pillars. Switch tabs below to inspect system architecture, verified SLAs, and platform scope.
-        </p>
+
+        <Link
+          to="/products"
+          onClick={playSubtleClick}
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/20 hover:border-[#72bf44]/60 transition-all self-start md:self-auto shrink-0 group"
+        >
+          <span>View all products</span>
+          <ArrowRight size={14} className="text-[#85cc38] group-hover:text-slate-950 transition-colors" />
+        </Link>
       </div>
 
       {/* Domain Selector Pills */}

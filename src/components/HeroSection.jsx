@@ -21,7 +21,7 @@ export default function HeroSection({ onOpenDemoModal, onOpenCertModal }) {
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span>INDIA HQ (Bengaluru & Mangaluru)</span>
+            <span>INDIA HQ (Bengaluru)</span>
             <span className="text-emerald-500">•</span>
             <span>U.A.E (Dubai Corporate Office)</span>
           </div>

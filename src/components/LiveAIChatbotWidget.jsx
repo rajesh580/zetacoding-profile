@@ -31,7 +31,7 @@ export default function LiveAIChatbotWidget() {
   const quickQuestions = [
     "What is GEO (AI Visibility)?",
     "Cloud ERP & AlignBooks (VAT/GST)",
-    "ZetaWap WhatsApp Cloud CRM",
+    "Prospect AI & Tech Free CRM",
     "TMBill & Autorox Industry OS",
     "NFC Digital Business Cards",
     "Academic MOUs & Student Training",
@@ -50,8 +50,8 @@ export default function LiveAIChatbotWidget() {
       return "💼 **Cloud ERP & SAP Business One**:\nWe deploy UAE FTA-compliant VAT and Indian GST enterprise ERP software for 14,000+ businesses.\n\n• **AlignBooks**: Cloud ERP, E-Way Bill, Multi-Branch Billing, Inventory\n• **SAP Business One**: Enterprise MRP, Financial Accounting & Supply Chain\n• **ERPNext**: Open-source modular ERP customization";
     } 
     
-    if (q.includes('zetawap') || q.includes('whatsapp') || q.includes('crm') || q.includes('broadcast')) {
-      return "📱 **ZetaWap Cloud CRM**:\nOfficial WhatsApp Business Cloud API software:\n\n• Multi-agent shared team inbox & auto-routing\n• Unlimited broadcast campaign scheduler with 98% open rates\n• Interactive in-chat catalog and order checkout\n• Real-time ERP sync with AlignBooks & SAP";
+    if (q.includes('crm') || q.includes('prospect') || q.includes('tech free') || q.includes('leads') || q.includes('whatsapp')) {
+      return "📱 **Prospect AI & Tech Free CRM**:\nNext-generation lead capture and conversational sales CRM:\n\n• Instant 60-second AI lead response to eliminate lead leakage\n• Multi-channel follow-ups across WhatsApp, SMS & Email\n• Frictionless Kanban deals pipeline & automated booking\n• Real-time ERP sync with AlignBooks & SAP";
     }
 
     if (q.includes('tmbill') || q.includes('autorox') || q.includes('restaurant') || q.includes('garage') || q.includes('pos')) {

@@ -41,68 +41,47 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
 
   return (
     <section className="w-full py-8 text-slate-100 relative">
-      <div className="w-full p-6 sm:p-8 rounded-3xl glass-panel-glow border border-[#72bf44]/30 shadow-2xl relative overflow-hidden">
+      <div className="w-full space-y-6">
         
-        {/* Ambient background glow */}
-        <div className="absolute top-0 right-1/4 w-80 h-80 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#38bdf8]/10 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Header telemetry banner */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-white/10 relative z-10">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#72bf44]/15 border border-[#72bf44]/30 text-[#85cc38] text-xs font-mono font-bold uppercase tracking-wider mb-2">
-              <Activity size={13} className="animate-pulse text-[#85cc38]" />
-              <span>Global Operational Telemetry • 24/7 Dual-Hub Network</span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-black text-white font-display">
-              India Engineering HQ <span className="text-[#85cc38]">&bull;</span> Dubai Corporate LLC
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-              Real-time synchronized operations spanning Indian technology innovation and United Arab Emirates commercial execution.
-            </p>
+        {/* Section Header Title (Subheading removed per specification) */}
+        <div className="text-left pb-2">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#72bf44]/15 border border-[#72bf44]/30 text-[#85cc38] text-xs font-mono font-bold uppercase tracking-wider mb-2">
+            <Activity size={13} className="animate-pulse text-[#85cc38]" />
+            <span>24/7 Global Hub Network</span>
           </div>
-
-          {/* Central Telemetry Stats Pill */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 bg-white/5 border border-white/10 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shrink-0 self-start md:self-auto">
-            <div className="flex items-center gap-1.5 text-xs font-mono text-slate-300">
-              <Wifi size={14} className="text-[#85cc38]" />
-              <span>Subsea Link:</span>
-              <span className="text-[#85cc38] font-bold">{latency}ms</span>
-            </div>
-            <span className="text-slate-600 hidden sm:inline">|</span>
-            <div className="text-[11px] font-mono text-slate-300">
-              <span>Offset: </span>
-              <strong className="text-white">+1h 30m IST</strong>
-            </div>
-          </div>
+          <h3 className="text-2xl sm:text-3xl font-black text-white font-display">
+            India Engineering HQ <span className="text-[#85cc38]">&bull;</span> Dubai Corporate LLC
+          </h3>
         </div>
 
-        {/* Dual Hub Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 relative z-10">
+        {/* Separate Dual Hub Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
           
-          {/* HUB 1: Bengaluru HQ (India) */}
-          <Card3D maxTilt={10} className="p-6 sm:p-7 rounded-3xl bg-[#0a0f1d]/90 border border-white/10 hover:border-[#72bf44]/50 transition-all flex flex-col justify-between shadow-xl">
+          {/* HUB 1: Bengaluru HQ (India) - Separate Container */}
+          <Card3D maxTilt={10} className="p-6 sm:p-8 rounded-3xl glass-panel-glow border border-[#72bf44]/40 hover:border-[#72bf44]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
             <div>
-              <div className="flex items-center justify-between gap-3 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-white p-1 shadow-lg border border-[#72bf44] flex items-center justify-center shrink-0">
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-2xl bg-white p-1.5 shadow-md border-2 border-[#72bf44] flex items-center justify-center shrink-0 overflow-hidden">
                     <img 
                       src="/assets/zetacoding_india_logo.png" 
                       alt="India Flag Badge" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full max-h-8 max-w-8 object-contain"
                       onError={(e) => { e.target.src = "/assets/zetacoding_logo_transparent.png"; }}
                     />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base sm:text-lg font-black text-white font-display">Bengaluru HQ</span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#72bf44]/20 text-[#85cc38] font-mono border border-[#72bf44]/30">
+                      <span className="text-lg sm:text-xl font-black text-white font-display">Bengaluru HQ</span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#72bf44]/20 text-[#85cc38] font-mono border border-[#72bf44]/40">
                         GLOBAL HQ
                       </span>
                     </div>
-                    <span className="text-xs text-slate-400 font-mono flex items-center gap-1 mt-0.5">
-                      <MapPin size={11} className="text-[#85cc38]" />
-                      <span>12.9716° N, 77.5946° E • Yelahanka, Bengaluru</span>
+                    <span className="text-xs text-[#85cc38] font-bold flex items-center gap-1 mt-0.5">
+                      <MapPin size={12} className="text-[#85cc38]" />
+                      <span>Bengaluru</span>
                     </span>
                   </div>
                 </div>
@@ -119,30 +98,36 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
                 </div>
               </div>
 
-              {/* Legal & Operational Scope */}
-              <div className="space-y-2 py-3 border-y border-white/10 text-xs text-slate-300">
+              {/* Legal & Operational Scope (ISO & MSME for India) */}
+              <div className="space-y-2.5 py-4 border-y border-white/10 text-xs text-slate-300">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400 font-medium">Entity:</span>
                   <span className="text-white font-bold text-right">{companyInfo.legalEntities.indiaHQ.name}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400 font-medium">Accreditation:</span>
-                  <span className="text-[#85cc38] font-mono font-bold">ISO 9001:2015 & MSME Udyam</span>
+                  <span className="text-[#85cc38] font-mono font-bold bg-[#72bf44]/15 px-2.5 py-0.5 rounded-md border border-[#72bf44]/30">
+                    ISO and MSME for India
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-400 font-medium">Regional Branch:</span>
-                  <span className="text-slate-200">Mangaluru, Karnataka, India</span>
+                  <span className="text-slate-400 font-medium">Certification Standards:</span>
+                  <span className="text-white font-semibold">ISO 9001:2015 & MSME Udyam</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-400 font-medium">Location:</span>
+                  <span className="text-slate-200">Bengaluru, Karnataka, India</span>
                 </div>
               </div>
             </div>
 
             {/* Hub Action Bar */}
-            <div className="mt-5 pt-3 flex flex-wrap items-center justify-between gap-3">
+            <div className="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/5">
               <a 
                 href={`tel:${companyInfo.phones.india}`}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#85cc38] hover:underline"
+                className="inline-flex items-center gap-2 text-sm font-mono font-black text-[#85cc38] hover:underline"
               >
-                <Phone size={13} />
+                <Phone size={14} />
                 <span>{companyInfo.phones.india}</span>
               </a>
 
@@ -158,29 +143,31 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
             </div>
           </Card3D>
 
-          {/* HUB 2: Dubai Office (UAE) */}
-          <Card3D maxTilt={10} className="p-6 sm:p-7 rounded-3xl bg-[#0a0f1d]/90 border border-white/10 hover:border-[#38bdf8]/50 transition-all flex flex-col justify-between shadow-xl">
+          {/* HUB 2: Dubai Office (UAE) - Separate Container */}
+          <Card3D maxTilt={10} className="p-6 sm:p-8 rounded-3xl glass-panel-glow border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#38bdf8]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
             <div>
-              <div className="flex items-center justify-between gap-3 mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-white p-1 shadow-lg border border-[#38bdf8] flex items-center justify-center shrink-0">
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-2xl bg-white p-1.5 shadow-md border-2 border-[#38bdf8] flex items-center justify-center shrink-0 overflow-hidden">
                     <img 
                       src="/assets/zetacoding_uae_logo.png" 
                       alt="UAE Flag Badge" 
-                      className="w-full h-full object-contain"
+                      className="w-full h-full max-h-8 max-w-8 object-contain"
                       onError={(e) => { e.target.src = "/assets/zetacoding_logo_transparent.png"; }}
                     />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="text-base sm:text-lg font-black text-white font-display">Dubai LLC</span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#38bdf8]/20 text-[#38bdf8] font-mono border border-[#38bdf8]/30">
+                      <span className="text-lg sm:text-xl font-black text-white font-display">Dubai LLC</span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#38bdf8]/20 text-[#38bdf8] font-mono border border-[#38bdf8]/40">
                         MIDDLE EAST DESK
                       </span>
                     </div>
                     <span className="text-xs text-slate-400 font-mono flex items-center gap-1 mt-0.5">
-                      <MapPin size={11} className="text-[#38bdf8]" />
-                      <span>25.2048° N, 55.2708° E • Deira, Dubai, UAE</span>
+                      <MapPin size={12} className="text-[#38bdf8]" />
+                      <span>Deira, Dubai, UAE</span>
                     </span>
                   </div>
                 </div>
@@ -197,15 +184,21 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
                 </div>
               </div>
 
-              {/* Legal & Operational Scope */}
-              <div className="space-y-2 py-3 border-y border-white/10 text-xs text-slate-300">
+              {/* Legal & Operational Scope (DED and VAT For Dubai) */}
+              <div className="space-y-2.5 py-4 border-y border-white/10 text-xs text-slate-300">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400 font-medium">Entity:</span>
                   <span className="text-white font-bold text-right">{companyInfo.legalEntities.uaeLLC.name}</span>
                 </div>
                 <div className="flex items-center justify-between">
+                  <span className="text-slate-400 font-medium">Licensing & Tax:</span>
+                  <span className="text-[#38bdf8] font-mono font-bold bg-[#38bdf8]/15 px-2.5 py-0.5 rounded-md border border-[#38bdf8]/30">
+                    DED and VAT For Dubai
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
                   <span className="text-slate-400 font-medium">Government License:</span>
-                  <span className="text-[#38bdf8] font-mono font-bold">DED License No. {legalDetails.dubaiLicense.licenseNo}</span>
+                  <span className="text-white font-mono font-bold">DED License No. {legalDetails?.dubaiLicense?.licenseNo || '1485234'}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400 font-medium">Tax Status:</span>
@@ -215,12 +208,12 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
             </div>
 
             {/* Hub Action Bar */}
-            <div className="mt-5 pt-3 flex flex-wrap items-center justify-between gap-3">
+            <div className="mt-6 pt-4 flex flex-wrap items-center justify-between gap-3 border-t border-white/5">
               <a 
                 href={`tel:${companyInfo.phones.uae}`}
-                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#38bdf8] hover:underline"
+                className="inline-flex items-center gap-2 text-sm font-mono font-black text-[#38bdf8] hover:underline"
               >
-                <Phone size={13} />
+                <Phone size={14} />
                 <span>{companyInfo.phones.uae}</span>
               </a>
 

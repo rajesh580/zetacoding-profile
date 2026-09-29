@@ -8,12 +8,11 @@ import {
   UtensilsCrossed, Wrench, Lock, Check, Landmark, GraduationCap,
   Calendar, Star, BarChart3, Clock, DollarSign, HeartHandshake, Shield
 } from 'lucide-react';
-import { companyInfo, products, journeyTimeline, techPartners, academicMOUs } from '../data/companyData';
+import { companyInfo, products, services, journeyTimeline, techPartners, academicMOUs } from '../data/companyData';
 import AnimatedSection, { StaggerContainer, StaggerItem, FadeInScale, FloatingElement } from '../components/AnimatedSection';
 import Card3D from '../components/Card3D';
 import Hero3DHologram from '../components/Hero3DHologram';
 import Interactive3DNetwork from '../components/Interactive3DNetwork';
-import LiveTechTicker from '../components/LiveTechTicker';
 import GlobalHubTelemetry from '../components/GlobalHubTelemetry';
 import InteractiveTechRadar from '../components/InteractiveTechRadar';
 import { playSubtleClick } from '../utils/soundFX';
@@ -37,83 +36,8 @@ export default function HomePage({ onOpenCertModal }) {
         <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-[#72bf44]/12 rounded-full blur-2xl pointer-events-none" />
         <div className="absolute inset-0 cyber-grid opacity-35 pointer-events-none" />
 
-        {/* Top Header Hub Strip Inside Hero - Stretched Full Width */}
-        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 mb-8 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="w-full p-3 sm:p-4 rounded-2xl glass-panel flex flex-col md:flex-row items-start md:items-center justify-between gap-3 sm:gap-4 border border-white/10 shadow-xl"
-          >
-            {/* Wordmark & Tagline */}
-            <div className="flex items-center gap-3.5 text-left w-full md:w-auto">
-              <div className="w-10 h-10 rounded-xl bg-white p-1 shadow-lg border border-[#72bf44] flex items-center justify-center shrink-0">
-                <img 
-                  src="/assets/zetacoding_logo_transparent.png" 
-                  alt="ZETACODING" 
-                  className="w-full h-full object-contain"
-                  onError={(e) => { e.target.src = "/assets/page_2_img_1.png"; }}
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-xl font-black text-white font-display tracking-wider">
-                    ZETA<span className="text-[#85cc38]">CODING</span>
-                  </span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-[#72bf44]/20 text-[#85cc38] font-bold border border-[#72bf44]/40 font-mono">
-                    2026+ ARCHITECTURE
-                  </span>
-                </div>
-                <p className="text-[10px] sm:text-[11px] font-bold text-slate-300 tracking-wider uppercase">
-                  Empowering Businesses with Smart Technology
-                </p>
-              </div>
-            </div>
-
-            {/* Dual Circular Country Badges */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 w-full md:w-auto justify-start md:justify-end">
-              {/* India Badge */}
-              <FloatingElement duration={4} yOffset={6}>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#72bf44]/60 transition-all cursor-pointer group">
-                  <div className="w-7 h-7 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/assets/zetacoding_india_logo.png" 
-                      alt="India" 
-                      className="w-full h-full object-contain"
-                      onError={(e) => { e.target.src = "/assets/zetacoding_logo_transparent.png"; }}
-                    />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-[10px] font-black text-white block leading-tight">INDIA HQ</span>
-                    <span className="text-[8px] text-[#85cc38] font-mono">Bengaluru</span>
-                  </div>
-                </div>
-              </FloatingElement>
-
-              {/* UAE Badge */}
-              <FloatingElement duration={4.5} yOffset={6}>
-                <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#72bf44]/60 transition-all cursor-pointer group">
-                  <div className="w-7 h-7 rounded-full bg-white p-0.5 shadow-md flex items-center justify-center overflow-hidden">
-                    <img 
-                      src="/assets/zetacoding_uae_logo.png" 
-                      alt="UAE" 
-                      className="w-full h-full object-contain"
-                      onError={(e) => { e.target.src = "/assets/zetacoding_logo_transparent.png"; }}
-                    />
-                  </div>
-                  <div className="text-left">
-                    <span className="text-[10px] font-black text-white block leading-tight">U.A.E LLC</span>
-                    <span className="text-[8px] text-[#85cc38] font-mono">Dubai</span>
-                  </div>
-                </div>
-              </FloatingElement>
-            </div>
-
-          </motion.div>
-        </div>
-
         {/* Main Hero Content - Stretched from the Left */}
-        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 relative z-10 pt-4 sm:pt-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
             
             {/* Left Column: Headlines, Trust Badges, CTAs */}
@@ -124,17 +48,6 @@ export default function HomePage({ onOpenCertModal }) {
               className="lg:col-span-7 xl:col-span-7 space-y-6 text-left"
             >
               
-              {/* Animated Glowing Badge */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#72bf44]/15 text-[#85cc38] text-xs font-bold border border-[#72bf44]/40 shadow-[0_0_15px_rgba(114,191,68,0.2)]"
-              >
-                <span className="w-2 h-2 rounded-full bg-[#72bf44] animate-ping" />
-                <span>ISO 9001:2015 Certified • UAE DED License No. 1485234</span>
-              </motion.div>
-
               {/* Main Heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight font-display tracking-tight text-left">
                 Transforming Global Enterprises with{' '}
@@ -155,7 +68,7 @@ export default function HomePage({ onOpenCertModal }) {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl btn-3d-green text-slate-950 font-black text-sm tracking-wide transition-all group"
                 >
                   <Layers size={18} className="text-slate-950 group-hover:rotate-12 transition-transform" />
-                  <span>Explore 14+ Platforms</span>
+                  <span>Explore 5 Product Suites</span>
                   <ArrowRight size={17} className="text-slate-950 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -210,16 +123,97 @@ export default function HomePage({ onOpenCertModal }) {
 
       </section>
 
-      {/* INFINITE CYBER MARQUEE TICKER */}
-      <LiveTechTicker onOpenCertModal={onOpenCertModal} />
-
       {/* DUAL-HUB OPERATIONAL TELEMETRY & FIBER BRIDGE */}
       <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <GlobalHubTelemetry onOpenCertModal={onOpenCertModal} />
       </section>
 
-      {/* 2. GLOBAL KEY STATS - FULL WIDTH STRETCHED */}
-      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+      {/* CORE SERVICES SHOWCASE (Added per Page 1: "Add services here") */}
+      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
+        <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 text-left">
+          <div className="text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#72bf44]/15 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-2 border border-[#72bf44]/30">
+              <Sparkles size={14} className="text-[#85cc38]" />
+              <span>Full-Cycle Engineering &amp; AI</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
+              Enterprise <span className="text-[#85cc38]">Services</span>
+            </h2>
+            <p className="mt-2 text-slate-300 text-sm sm:text-base font-normal max-w-3xl">
+              Cutting-edge cybersecurity defense, generative engine optimization (GEO), AI-powered web/mobile development, and autonomous intelligent bots.
+            </p>
+          </div>
+
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs transition-all self-start md:self-auto group shrink-0"
+          >
+            <span>Explore All Services</span>
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </AnimatedSection>
+
+        {/* 4 Core Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full text-left">
+          {services.map((svc) => (
+            <Card3D
+              key={svc.id}
+              maxTilt={12}
+              className="rounded-3xl glass-panel p-6 border border-white/10 hover:border-[#72bf44]/60 flex flex-col justify-between h-full group text-left"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-[#72bf44]/60 transition-all text-[#85cc38]">
+                    {svc.id === 'cyber-security' && <Shield size={22} />}
+                    {svc.id === 'digital-transformation' && <Sparkles size={22} />}
+                    {svc.id === 'web-app-dev' && <Layers size={22} />}
+                    {svc.id === 'ai-agents-chatbots' && <Bot size={22} />}
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-[#85cc38] uppercase bg-[#72bf44]/15 px-2.5 py-1 rounded-full border border-[#72bf44]/30">
+                    Active Service
+                  </span>
+                </div>
+
+                <h3 className="text-lg font-black text-white group-hover:text-[#85cc38] transition-colors font-display mb-1.5">
+                  {svc.title}
+                </h3>
+
+                <p className="text-xs text-[#85cc38] font-semibold mb-3">
+                  {svc.tagline}
+                </p>
+
+                <p className="text-xs text-slate-300 leading-relaxed mb-4">
+                  {svc.desc}
+                </p>
+
+                {/* Items checklist */}
+                <div className="space-y-1.5 pt-3 border-t border-white/10">
+                  {svc.items && svc.items.slice(0, 3).map((item, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
+                      <CheckCircle2 size={13} className="text-[#85cc38] shrink-0 mt-0.5" />
+                      <span className="line-clamp-1">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-5 mt-4 border-t border-white/10">
+                <Link
+                  to="/services"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/10 hover:border-transparent transition-all shadow-sm"
+                >
+                  <span>Service Details &amp; Scope</span>
+                  <ArrowRight size={13} />
+                </Link>
+              </div>
+            </Card3D>
+          ))}
+        </div>
+      </section>
+
+      {/* 2. GLOBAL KEY STATS - Hidden presently per user specification */}
+      {/* 
+      <section className="hidden w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 w-full">
           {companyInfo.stats.map((stat, idx) => (
             <Card3D 
@@ -240,6 +234,7 @@ export default function HomePage({ onOpenCertModal }) {
           ))}
         </div>
       </section>
+      */}
 
       {/* 3. SPOTLIGHT: TOP ENTERPRISE PLATFORMS - FULL WIDTH */}
       <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
@@ -252,17 +247,14 @@ export default function HomePage({ onOpenCertModal }) {
             <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
               Enterprise Software <span className="text-[#85cc38]">Spotlight</span>
             </h2>
-            <p className="mt-2 text-slate-300 text-sm sm:text-base font-normal max-w-3xl">
-              Engineered for seamless ERP integration, AI automation, omnichannel CRM, and industry compliance across global markets.
-            </p>
           </div>
 
           <Link
-            to="/products"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-white/20 hover:border-[#72bf44]/60 transition-all self-start md:self-auto"
+            to="/services"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/20 hover:border-[#72bf44]/60 transition-all self-start md:self-auto group"
           >
-            <span>View All 14+ Platforms</span>
-            <ArrowRight size={14} className="text-[#85cc38]" />
+            <span>View all Services</span>
+            <ArrowRight size={14} className="text-[#85cc38] group-hover:text-slate-950 transition-colors" />
           </Link>
         </AnimatedSection>
 
@@ -300,9 +292,28 @@ export default function HomePage({ onOpenCertModal }) {
                   {product.desc}
                 </p>
 
-                {/* Highlights */}
-                <div className="space-y-2 pt-3 border-t border-white/10">
-                  {product.highlights && product.highlights.slice(0, 3).map((item, idx) => (
+                {/* Included Solutions & Types */}
+                <div className="space-y-2 pt-3 border-t border-white/10 text-left">
+                  {product.types && (
+                    <>
+                      <div className="text-[11px] font-bold text-[#85cc38] uppercase tracking-wider">
+                        Included Solutions ({product.types.length}):
+                      </div>
+                      {product.types.slice(0, 3).map((type, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-slate-200">
+                          <CheckCircle2 size={13} className="text-[#85cc38] shrink-0" />
+                          <span className="font-semibold text-white">{type.name}</span>
+                          {type.subtype && <span className="text-[11px] text-slate-400 truncate">({type.subtype})</span>}
+                        </div>
+                      ))}
+                      {product.types.length > 3 && (
+                        <div className="text-[11px] text-slate-400 pl-5">
+                          +{product.types.length - 3} more specialized systems...
+                        </div>
+                      )}
+                    </>
+                  )}
+                  {product.highlights && !product.types && product.highlights.slice(0, 3).map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-300 text-left">
                       <CheckCircle2 size={14} className="text-[#85cc38] shrink-0 mt-0.5" />
                       <span className="line-clamp-1">{item}</span>
@@ -414,109 +425,7 @@ export default function HomePage({ onOpenCertModal }) {
         </div>
       </section>
 
-      {/* 5. WHY CHOOSE ZETACODING - 4 ENTERPRISE PILLARS - FULL WIDTH */}
-      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
-        <AnimatedSection className="text-left mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#72bf44]/15 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-2 border border-[#72bf44]/30">
-            <Shield size={14} className="text-[#85cc38]" />
-            <span>Enterprise Reliability</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white font-display">
-            Why Scaling Businesses <span className="text-[#85cc38]">Choose Zetacoding</span>
-          </h2>
-        </AnimatedSection>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full text-left">
-          {[
-            {
-              icon: <Globe size={24} className="text-[#85cc38]" />,
-              title: "Dual-Hub International Footprint",
-              desc: "Engineering Innovation Headquarters in Bengaluru & Mangaluru (India) and registered corporate office in Dubai (UAE)."
-            },
-            {
-              icon: <ShieldCheck size={24} className="text-[#c084fc]" />,
-              title: "Certified & Audited Compliance",
-              desc: "Operating with ISO 9001:2015 quality standards, MSME Govt. of India registration, UAE DED License, and FTA VAT compliance."
-            },
-            {
-              icon: <Zap size={24} className="text-[#fbbf24]" />,
-              title: "Pre-Built Battle-Tested Platforms",
-              desc: "Deploy in days instead of months with 14+ mature platforms across ERP, WhatsApp Cloud CRM, Restaurant OS, and AI agents."
-            },
-            {
-              icon: <GraduationCap size={24} className="text-[#38bdf8]" />,
-              title: "Academic-Industry 4.0 Ecosystem",
-              desc: "AICTE-approved partnership network with 25+ universities fostering IEEE projects, student training (STPs), and faculty upskilling."
-            }
-          ].map((pillar, idx) => (
-            <Card3D key={idx} maxTilt={14} className="rounded-3xl glass-panel p-6 border border-white/10 hover:border-[#72bf44]/50 flex flex-col justify-between h-full group text-left">
-              <div>
-                <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:border-[#72bf44]/60 transition-all">
-                  {pillar.icon}
-                </div>
-                <h3 className="text-base font-black text-white mb-2 font-display">{pillar.title}</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">{pillar.desc}</p>
-              </div>
-              <div className="mt-4 pt-3 border-t border-white/10 flex items-center gap-1.5 text-xs text-[#85cc38] font-bold">
-                <CheckCircle2 size={14} />
-                <span>Enterprise Benchmark</span>
-              </div>
-            </Card3D>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. TECHNOLOGY PARTNERS & COLLEGE MOUS SPOTLIGHT - FULL WIDTH */}
-      <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
-        <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/10 w-full text-left">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
-            <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#85cc38] uppercase tracking-wider mb-1">
-                <Award size={14} />
-                <span>Official Strategic Partners & MOUs</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-white font-display">
-                Trusted by Industry Leaders & <span className="text-[#85cc38]">Top Universities</span>
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                Strategic platform integrations and academic MOUs empowering 14,000+ businesses and 50,000+ students.
-              </p>
-            </div>
-
-            <Link
-              to="/academic-mous"
-              className="px-6 py-3 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/20 transition-all self-start md:self-auto block"
-            >
-              <span>View All 10 MOUs & Partners</span>
-            </Link>
-          </div>
-
-          {/* Partner & College Logos Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 w-full">
-            {[
-              { name: "AlignBooks", logo: "/assets/partners/alignbooks.png" },
-              { name: "SAP Business One", logo: "/assets/partners/sap.png" },
-              { name: "TMBill", logo: "/assets/partners/tmbill.png" },
-              { name: "HAEGL", logo: "/assets/partners/haegl.png" },
-              { name: "BMSIT & M", logo: "/assets/mous/bmsit.png" },
-              { name: "SVIT Bangalore", logo: "/assets/mous/svit.png" },
-            ].map((item, idx) => (
-              <Card3D 
-                key={idx} 
-                maxTilt={16}
-                className="p-3 rounded-2xl glass-panel border border-white/10 hover:border-[#72bf44]/60 flex flex-col items-center justify-center text-center group cursor-pointer"
-              >
-                <div className="w-full h-16 bg-white/95 rounded-xl p-1.5 flex items-center justify-center mb-2 overflow-hidden shadow-md">
-                  <img src={item.logo} alt={item.name} className="max-w-full max-h-full object-contain" onError={(e) => { e.target.style.display = 'none'; }} />
-                </div>
-                <span className="text-[11px] font-bold text-white group-hover:text-[#85cc38] transition-colors line-clamp-1">{item.name}</span>
-              </Card3D>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. GLOBAL LOCATIONS & SCOPING CONSULTATION CTA - FULL WIDTH */}
+      {/* GLOBAL LOCATIONS & SCOPING CONSULTATION CTA - FULL WIDTH */}
       <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
         <div className="p-8 sm:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden w-full text-left">
           <div className="space-y-2 text-left relative z-10">
@@ -527,9 +436,6 @@ export default function HomePage({ onOpenCertModal }) {
             <h3 className="text-2xl sm:text-4xl font-black font-display text-white">
               Ready to Upgrade Your Enterprise with Smart Technology?
             </h3>
-            <p className="text-sm sm:text-base text-slate-300 max-w-3xl">
-              Connect directly with our engineering architects in Bengaluru HQ or Dubai LLC Office for immediate scoping and customized architecture proposals.
-            </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3.5 shrink-0 relative z-10 w-full sm:w-auto">
@@ -537,14 +443,7 @@ export default function HomePage({ onOpenCertModal }) {
               to="/contact"
               className="w-full sm:w-auto px-8 py-4 rounded-xl btn-3d-green text-slate-950 font-black text-xs sm:text-sm transition-all text-center"
             >
-              Contact Offices
-            </Link>
-
-            <Link
-              to="/products"
-              className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs sm:text-sm border border-white/20 transition-all text-center"
-            >
-              Explore Solutions
+              Contact Us
             </Link>
           </div>
         </div>

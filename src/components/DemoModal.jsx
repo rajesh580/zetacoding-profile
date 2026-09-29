@@ -138,7 +138,7 @@ export default function DemoModal({ isOpen, onClose, selectedProduct }) {
                   >
                     <option value="GEO (Generative Engine Optimization)">GEO (AI Visibility & Recommendations)</option>
                     <option value="anvex.ai Autonomous Agents">anvex.ai (Voice & Vision AI Agents)</option>
-                    <option value="ZetaWap Cloud CRM">ZetaWap WhatsApp Cloud CRM</option>
+                    <option value="Prospect AI & Tech Free CRM">Prospect AI & Tech Free CRM</option>
                     <option value="Cloud ERP & AlignBooks">Cloud ERP Software & AlignBooks (UAE VAT)</option>
                     <option value="SAP Business One">SAP Business One Implementation</option>
                     <option value="TMBill Restaurant Tech">TMBill Restaurant Management OS</option>

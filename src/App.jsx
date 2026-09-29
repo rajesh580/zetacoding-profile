@@ -12,6 +12,7 @@ import ServicesPage from './pages/ServicesPage';
 import AcademicMOUsPage from './pages/AcademicMOUsPage';
 import CertificationsPage from './pages/CertificationsPage';
 import ContactPage from './pages/ContactPage';
+import BlogsPage from './pages/BlogsPage';
 import LiveAIChatbotWidget from './components/LiveAIChatbotWidget';
 import AccreditationsModal from './components/AccreditationsModal';
 import Footer from './components/Footer';
@@ -114,6 +115,12 @@ export default function App() {
               } 
             />
             <Route 
+              path="/blogs" 
+              element={
+                <BlogsPage />
+              } 
+            />
+            <Route 
               path="*" 
               element={
                 <HomePage 
@@ -129,8 +136,8 @@ export default function App() {
           onOpenCertModal={() => setCertModalOpen(true)}
         />
 
-        {/* Floating Interactive ZetaBot AI Widget */}
-        <LiveAIChatbotWidget />
+        {/* Chatbot disabled per user specification: "Disable chatbot – because later we will add trained bot" */}
+        {/* <LiveAIChatbotWidget /> */}
 
         {/* Accreditations & Licenses Modal */}
         <AccreditationsModal 

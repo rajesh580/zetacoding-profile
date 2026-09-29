@@ -26,7 +26,7 @@ export default function ContactPage() {
             Get in Touch with <span className="bg-gradient-to-r from-[#85cc38] to-[#72bf44] bg-clip-text text-transparent">ZETACODING</span>
           </h1>
           <p className="mt-4 text-slate-300 text-base sm:text-lg max-w-3xl font-normal leading-relaxed text-left">
-            Reach our engineering headquarters in Bengaluru, regional hub in Mangaluru, or international corporate office in Dubai, UAE.
+            Reach our engineering headquarters in Bengaluru or international corporate office in Dubai, UAE.
           </p>
         </motion.div>
       </div>

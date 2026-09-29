@@ -10,16 +10,16 @@ export const companyInfo = {
     indiaHQ: {
       name: "ZETACODING INNOVATIVE SOLUTIONS",
       type: "Indian Registered Partnership / MSME Enterprise",
-      address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Yelahanka, Bengaluru, Karnataka, India - 560064",
-      phone: "+91 9742682028",
-      email: "info@zetacoding.com",
+      address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Bengaluru, Karnataka, India - 560064",
+      phone: "+91 8867845719",
+      email: "infor@zetacoding.com",
       status: "Headquarters (India)"
     },
     mangaluruBranch: {
       name: "ZETACODING INNOVATIVE SOLUTIONS (Branch)",
       type: "Regional Development & Engineering Center",
       address: "Ground Floor, City Centre Mall / KS Rao Road, Mangaluru, Karnataka, India - 575001",
-      phone: "+91 824 298 4028",
+      phone: "+91 8242984028",
       email: "mangaluru@zetacoding.com",
       status: "Regional Hub"
     },
@@ -33,17 +33,17 @@ export const companyInfo = {
     }
   },
   phones: {
-    india: "+91 9742682028",
-    mangaluru: "+91 824 298 4028",
+    india: "+91 8867845719",
+    mangaluru: "+91 8242984028",
     uae: "+971 563 140 1786"
   },
   whatsapp: {
-    india: "919742682028",
+    india: "918867845719",
     uae: "9715631401786"
   },
   emails: {
-    primary: "info@zetacoding.com",
-    support: "support@zetacoding.com",
+    primary: "infor@zetacoding.com",
+    support: "infor@zetacoding.com",
     careers: "careers@zetacoding.com"
   },
   stats: [
@@ -118,276 +118,256 @@ export const studentSuccessPath = [
 ];
 
 export const products = [
+  // 1) CYBER SECURITY PRODUCTS
   {
-    id: "geo-ai",
-    name: "GEO (Generative Engine Optimization)",
-    category: "AI & Search",
-    badge: "Breakthrough 2026",
-    tagline: "Unlocking Unmatched AI Visibility — The Search Galaxy is Changing from Links to Recommendations",
-    desc: "Traditional SEO is failing as Google AI Overviews and LLMs take over search. Zetacoding GEO ensures your brand is recommended across ChatGPT, Gemini, Perplexity, Copilot, and 10+ AI platforms.",
-    highlights: [
-      "+30% AI Visibility within 2 Months with aggressive share-of-voice tracking",
-      "4.4x Higher Conversion Rates compared to traditional organic clicks",
-      "3x Lower Cost Per Lead (CPL) compared to expensive paid search ads",
-      "Broad AI Network Coverage: ChatGPT, Gemini, Perplexity, Microsoft Copilot & more",
-      "Precise Brand Sentiment Analysis & Competitor displacement strategy"
-    ],
-    features: [
-      "Multi-Model Citation Engineering (OpenAI, Anthropic, Google, DeepSeek)",
-      "Knowledge Graph Schema & Structured AI Entity Embedding",
-      "Real-Time LLM Prompt Variance Monitoring & Telemetry",
-      "High-Intent Buyer Recommendation Optimization",
-      "Comprehensive AI Visibility Audit & Competitive Benchmark"
-    ],
-    fourStepMethod: [
-      { step: "1. Connect", desc: "Connect brand assets and authority nodes to the global AI ecosystem." },
-      { step: "2. Monitor", desc: "Monitor multi-model AI mentions, citation frequency, and prompt contexts." },
-      { step: "3. Measure", desc: "Measure visibility index, brand sentiment, and conversion performance." },
-      { step: "4. Optimize", desc: "Continuously optimize citations, semantic vectors, and prompt embeddings." }
-    ],
-    color: "emerald"
-  },
-  {
-    id: "anvex-ai",
-    name: "anvex.ai - AI-Powered Agents",
-    category: "Autonomous AI",
-    badge: "Flagship AI",
-    tagline: "Smarter Automation. Better Engagement. Stronger Business.",
-    desc: "Cutting-edge multimodal autonomous agents combining Voice, Vision, and Chatbot intelligence powered by custom LLMs and NLP cognitive layers.",
-    highlights: [
-      "24/7 Intelligent Voice Agents with human-like latency (<450ms)",
-      "Real-Time Computer Vision for workplace safety & spatial monitoring",
-      "Context-Aware Multi-Turn Chatbots for Web & WhatsApp",
-      "Seamless ERP, CRM & Database API integrations"
-    ],
-    features: [
-      "NLP & Custom LLM Fine-Tuning on Enterprise Data",
-      "Cognitive Layer Architecture with Long-Term Memory",
-      "Voice + Vision + Language Multimodal Fusion",
-      "Zero-Downtime High-Throughput Cloud Infrastructure",
-      "Interactive Real-Time Analytics & Call Transcript Logs"
-    ],
-    solutions: [
+    id: "cybersecurity-products",
+    name: "Cyber Security Products",
+    number: "01",
+    category: "Cybersecurity Products",
+    badge: "Enterprise Security",
+    tagline: "Autonomous Website Defense & Continuous Log Telemetry",
+    desc: "Next-generation enterprise security suites providing autonomous website defense against OWASP threats and continuous SIEM log telemetry with audit-ready reporting.",
+    color: "purple",
+    icon: "Shield",
+    types: [
       {
-        title: "AI Voice Agents",
-        desc: "24/7 intelligent voice assistants that answer incoming calls, qualify leads, schedule appointments, and resolve customer issues with human-like conversation."
+        id: "cipher",
+        name: "CIPHER",
+        subtype: "Website Defense & Protection",
+        tagline: "Automated Website Security & Vulnerability Defense",
+        desc: "Autonomous web application firewall protecting websites against SQL injection, XSS, DDoS attacks, and malicious bot traffic with sub-second mitigation.",
+        badge: "WAF & Web Security",
+        highlights: [
+          "Zero-Day Web Exploit Shielding & Real-Time Traffic Scrubbing",
+          "Layer 7 DDoS Attack Absorption & Perimeter Hardening",
+          "SSL/TLS Security Policy Enforcement & Automated Vulnerability Scanning",
+          "OWASP Top 10 Real-Time Anomaly Blocking"
+        ],
+        features: [
+          "Real-time IP reputation filtering",
+          "Deep packet inspection for HTTP/HTTPS requests",
+          "Instant mitigation of OWASP Top 10 vulnerabilities",
+          "Sub-millisecond latency overhead"
+        ]
       },
       {
-        title: "AI Vision Agents",
-        desc: "Advanced computer vision solutions for real-time monitoring, object detection, anomaly detection, automated workplace safety, and spatial analytics."
-      },
-      {
-        title: "AI Chatbot Solutions",
-        desc: "Smart multi-turn chatbots for websites, WhatsApp, and social channels that understand context, access CRM data, and execute transactions."
+        id: "sachet-soc",
+        name: "Sachet SOC",
+        subtype: "Excel File Telemetry & Log Audits",
+        tagline: "Continuous Log Streaming & Audit-Ready Incident Reporting",
+        desc: "Lightweight, powerful Security Operations Center engine that ingests server and cloud logs, correlates anomalies, and automatically outputs audit-ready Excel reports.",
+        badge: "Audit Telemetry",
+        highlights: [
+          "Automated Excel / CSV Spreadsheet Incident Reporting for CISO & IT Audits",
+          "Plug-and-play SIEM & SOC Log Telemetry Monitoring",
+          "MITRE ATT&CK Framework Threat Mapping & Real-Time Alerting",
+          "ISO 27001, UAE NESA & GDPR Statutory Audit-Ready Log Streams"
+        ],
+        features: [
+          "Automated correlation of server, cloud, and firewall logs",
+          "Instant Excel & CSV log file generation for audits",
+          "Anomaly detection with customizable threshold alerting",
+          "Low-overhead continuous telemetry log streaming"
+        ]
       }
-    ],
-    color: "purple"
+    ]
   },
+
+  // 2) ERP SOLUTIONS
   {
-    id: "zetawap-crm",
-    name: "ZetaWap Cloud CRM & WhatsApp API",
-    category: "Industry Platforms & CRM",
-    badge: "Cloud Platform",
-    tagline: "Where Every Chat Becomes a Business Opportunity",
-    desc: "Enterprise WhatsApp Business Cloud API & all-in-one CRM system with multi-agent inbox, campaign scheduler, funnel automation, and AI chatbots.",
-    highlights: [
-      "Official Meta WhatsApp Business Cloud API with Green Tick Verification",
-      "Unlimited Broadcasts & Scheduled Drip Campaigns with zero blocking risk",
-      "Multi-Agent Team Inbox with Automated Departmental Routing",
-      "In-Chat Product Catalog, Cart Checkout & Payment Gateway Integration"
-    ],
-    features: [
-      "13+ Inbuilt Smart Marketing & CRM Automations",
-      "Visual Drag-and-Drop Chatbot & Funnel Builder",
-      "Dynamic CRM Lead Pipeline & Custom Tags",
-      "End-to-End Encrypted Cloud Data Synchronization",
-      "Direct Webhook Sync with AlignBooks, SAP & Website CRMs"
-    ],
-    color: "green"
+    id: "erp-solutions",
+    name: "ERP Solutions",
+    number: "02",
+    category: "ERP Solutions",
+    badge: "14,000+ Businesses",
+    tagline: "Smart Cloud Accounting & Complete Business ERP Across 5 Editions",
+    desc: "Unified enterprise resource planning and cloud accounting software tailored with dual UAE FTA VAT and Indian GST compliance, inventory control, and POS fast billing.",
+    color: "blue",
+    icon: "Database",
+    types: [
+      {
+        id: "alignbooks",
+        name: "AlignBooks (Accounting Software)",
+        subtype: "Cloud Accounting Software & Enterprise ERP",
+        tagline: "One Unified ERP Operating Across 5 Specialized Editions",
+        desc: "Feature-rich cloud accounting software and comprehensive business ERP trusted by over 14,000 businesses across India and the UAE.",
+        badge: "5 Editions Available",
+        editions: [
+          { name: "BASIC", desc: "Core invoicing, billing, accounts receivable/payable, tax calculations, and basic financial reporting." },
+          { name: "Premium", desc: "Multi-currency support, vendor management, real-time inventory tracking, and purchase order cycles." },
+          { name: "Ultima", desc: "Advanced manufacturing, bill of materials (BOM), batch & serial number tracking, and automated e-way billing." },
+          { name: "All-in-One (ERP)", desc: "Comprehensive enterprise suite with POS fast billing, multi-branch synchronization, and departmental workflow automations." },
+          { name: "Enterprise", desc: "Custom software extensions, dedicated private cloud hosting, enterprise SLA guarantees, and priority 24/7 engineering support." }
+        ],
+        highlights: [
+          "5 Available Editions: BASIC, Premium, Ultima, All-in-One (ERP), Enterprise",
+          "100% UAE FTA VAT & Indian GST Statutory Audit Ready",
+          "Multi-Branch, Multi-Warehouse & Multi-Currency Architecture",
+          "Integrated POS Fast Billing, Barcode Printing & WhatsApp Invoice Dispatch"
+        ],
+        modules: [
+          "Sales, Quotations & Automated Billing",
+          "Purchase Orders, Goods Receipts & Landed Costs",
+          "Comprehensive Finance & Double-Entry Accounting",
+          "Real-Time Inventory, Batch Tracking & Expiry Alerts",
+          "POS Fast Billing with Offline Sync Mode",
+          "Payroll, Staff Attendance & HR Operations"
+        ]
+      }
+    ]
   },
+
+  // 3) CRM SOLUTIONS
   {
-    id: "cloud-erp",
-    name: "All-in-One Cloud ERP (AlignBooks)",
-    category: "Enterprise ERP",
-    badge: "Enterprise",
-    tagline: "Your Business, Your Passion — We Just Make It Smoother!",
-    desc: "Complete cloud-native ERP software tailored for modern businesses across Retail, Pharmacies, Garments, Trading, Manufacturing, and Hospitality.",
-    highlights: [
-      "Dual Compliance: 100% UAE FTA VAT & Indian GST Audit Ready",
-      "Accessible anywhere on Desktop, Mac, Tablet, and iOS/Android Mobile",
-      "Multi-Branch, Multi-Warehouse & Multi-Currency Management",
-      "Built-in POS, Barcode Generation & Direct E-Invoicing"
-    ],
-    modules: [
-      "Sales, Quotations & Automated Billing",
-      "Purchase Orders, Goods Receipts & Landed Costs",
-      "Comprehensive Finance & Double-Entry Accounting",
-      "Real-Time Inventory, Batch Tracking & Expiry Alerts",
-      "POS Fast Billing with Offline Sync Mode",
-      "Payroll, Staff Attendance & HR Operations"
-    ],
-    features: [
-      "Real-time Executive Dashboard & MIS Reports",
-      "Role-Based User Permissions & Access Audit Trails",
-      "Integrated Payment Gateways & Banking API Sync",
-      "Automated WhatsApp & Email Invoice Dispatch",
-      "Cloud Backup with 99.9% Uptime Guarantee"
-    ],
-    color: "blue"
+    id: "crm-solutions",
+    name: "CRM Solutions",
+    number: "03",
+    category: "CRM Solutions",
+    badge: "High Conversion",
+    tagline: "Intelligent Lead Handling, Conversational Sales & Frictionless CRM",
+    desc: "Next-generation customer relationship management suites built to stop lead leakage, accelerate pipeline velocity, and follow up with prospects automatically.",
+    color: "amber",
+    icon: "Workflow",
+    types: [
+      {
+        id: "prospect-ai",
+        name: "Prospect AI",
+        subtype: "Lead & Sales Engine",
+        tagline: "Instant 60-Second Lead Response & Automated Multi-Channel Follow-Up",
+        desc: "Fully managed conversational AI sales agent that connects with incoming prospects across WhatsApp, SMS, and email within 60 seconds and books appointments directly.",
+        badge: "Conversational AI",
+        highlights: [
+          "Instant 60-Second Response Time to Stop Competitor Lead Leakage",
+          "Automated Multi-Channel Follow-Up Sequences via WhatsApp, SMS & Email",
+          "AI Meeting Scheduler with Google & Outlook Calendar Synchronization",
+          "Automated Lead Qualification based on Budget, Timeline, and Intent"
+        ],
+        features: [
+          "Smart Lead Qualification asking budget, timeline, and purchase intent",
+          "AI Meeting Scheduler with automated reminder sequences to stop no-shows",
+          "Live Team Handoff when high-value enterprise prospect requests a human",
+          "Full Pipeline Velocity Tracking & ROI Attribution by Ad Campaign"
+        ]
+      },
+      {
+        id: "tech-free",
+        name: "Tech Free",
+        subtype: "Frictionless Smart Cloud CRM",
+        tagline: "Simple, Agile & Free of Unnecessary Technical Complexities",
+        desc: "Streamlined customer relationship management platform designed for fast-moving sales teams. Effortless lead capture, visual deals pipeline, and team performance insights.",
+        badge: "Frictionless CRM",
+        highlights: [
+          "Kanban Drag-and-Drop Sales Pipeline with Deal Stage Milestones",
+          "Omnichannel Lead Capture from Web, Social Media & Phone Logs",
+          "Zero Complexity Intuitive Interface for Immediate Team Adoption",
+          "Automated Task Assignments, Follow-Up Reminders & Performance Telemetry"
+        ],
+        features: [
+          "Kanban-style drag-and-drop lead pipeline",
+          "Activity tracking with automated call logs and reminders",
+          "Custom tags, lead scoring, and automated task assignments",
+          "Instant mobile and desktop web accessibility"
+        ]
+      }
+    ]
   },
+
+  // 4) CUSTOM SOFTWARE SOLUTIONS
   {
-    id: "sap-b1",
-    name: "SAP Business One Solutions",
-    category: "Enterprise ERP",
-    badge: "Gold Standard",
-    tagline: "Integrated ERP Platform Connecting Every Aspect of Your Enterprise",
-    desc: "Complete implementation, customization, and cloud hosting for SAP Business One ERP for growing small and medium-sized enterprises.",
-    highlights: [
-      "End-to-End Enterprise Resource Planning for Scaling Companies",
-      "Global standard with Multi-Company, Multi-Currency & Multi-Language",
-      "Native HANA In-Memory Database for Sub-Second Analytics",
-      "Certified SAP Implementation Architects in Bengaluru & Dubai"
-    ],
-    modules: [
-      "Sales & CRM (Opportunities, Quotations, Sales Orders, E-Invoicing)",
-      "Accounting & Financials (Multi-Currency, Forex, Fixed Assets, IFRS)",
-      "Purchase & Procurement (PO, Goods Receipt PO, Landed Cost Analysis)",
-      "Production & Material Management (BOM, MRP, Bin Locations, Serial Numbers)",
-      "Project Management (Gantt Charts, Resource Allocation, Milestones)"
-    ],
-    features: [
-      "Custom Add-on Development & Web Portal Extensions",
-      "Pre-Built Connectors for Shopify, WooCommerce, Amazon & Magento",
-      "Mobile SAP B1 Apps for Field Sales & Approvals",
-      "Microsoft Power BI Interactive Analytics Integration",
-      "Full Cloud Hosting on AWS & Microsoft Azure"
-    ],
-    integrations: ["Shopify", "WooCommerce", "BigCommerce", "Magento", "Power BI", "Amazon", "eBay", "SUSE"],
-    color: "amber"
+    id: "custom-software-solutions",
+    name: "Custom Software Solutions",
+    number: "04",
+    category: "Custom Software Solutions",
+    badge: "50K+ Businesses",
+    tagline: "Specialized Industry Management Systems Tailored for Vertical Domains",
+    desc: "Turnkey enterprise operating systems engineered for specialized vertical industries: automotive garages, restaurants, veterinary clinics, spas/salons, and corporate expense management.",
+    color: "cyan",
+    icon: "Cpu",
+    types: [
+      {
+        id: "garage-management",
+        name: "Garage Management System",
+        subtype: "Sianty & AutoFox / AutoRox",
+        tagline: "Complete Workshop Management OS Powering 36,000+ Auto Repair Centers",
+        desc: "End-to-end auto workshop management system with digital job cards, technician task allocations, spare parts inventory control, and automated customer service alerts.",
+        badge: "36K+ Garages",
+        highlights: [
+          "Digital Job Cards with Vehicle Inspection Photos & Mechanic Commission Tracking",
+          "Spare Parts Inventory Management with Barcode Scanning & Vendor POs",
+          "Automated WhatsApp & SMS Service Reminders & Repair Status Alerts",
+          "Deployed in 36,000+ Auto Workshops Across 20+ Countries"
+        ]
+      },
+      {
+        id: "restaurant-management",
+        name: "Restaurant Management System",
+        subtype: "TMBill (Timbill)",
+        tagline: "Unified Restaurant OS Powering 14,000+ Dining Outlets & Cloud Kitchens",
+        desc: "Complete dining and cloud kitchen management system with offline-ready cloud POS, kitchen display system (KDS), table management, and direct food aggregator menu sync.",
+        badge: "14K+ Restaurants",
+        highlights: [
+          "100% Offline POS Mode with Automatic Cloud Synchronization",
+          "Direct Menu Sync with Zomato, Swiggy, Talabat, Deliveroo & Careem",
+          "Kitchen Display System (KDS) & Waiter Mobile Ordering App",
+          "Recipe Management, Raw Material Costing & Dynamic Stock Inventory"
+        ]
+      },
+      {
+        id: "animal-management",
+        name: "Animal Management System",
+        subtype: "DegiHerd (Degitterd)",
+        tagline: "Veterinary Hospital, Kennel & Livestock Management Platform",
+        desc: "Dedicated health and operations platform for pet hospitals, veterinary clinics, boarding kennels, and livestock facilities to manage electronic medical records and vaccinations.",
+        badge: "Vet & Livestock OS",
+        highlights: [
+          "Electronic Medical Records (EMR) for Veterinary Diagnoses & Prescriptions",
+          "Automated Periodic Vaccination & Health Checkup WhatsApp Alerts",
+          "Boarding Kennel & Hospital Stalls Reservation Management",
+          "Livestock Breeding Cycles, Milk Yield & Herd Health Telemetry"
+        ]
+      },
+      {
+        id: "saloon-management",
+        name: "Saloon Management System",
+        subtype: "Saloonist",
+        tagline: "Stylist Scheduling & Client Experience OS for Salons & Spas",
+        desc: "All-in-one management platform for hair salons, luxury spas, and wellness studios with 24/7 online booking, stylist chair allocation, and customer loyalty memberships.",
+        badge: "Spa & Salon OS",
+        highlights: [
+          "24/7 Self-Service Client Booking Widget for Web, Instagram & Facebook",
+          "Stylist Chair Allocation, Commission Calculations & Performance Analytics",
+          "Automated SMS & WhatsApp Appointment Reminders to Eliminate No-Shows",
+          "Integrated Retail Inventory Control & Gift Voucher Management"
+        ]
+      },
+      {
+        id: "expense-management",
+        name: "Expense Management System",
+        subtype: "Allan Card",
+        tagline: "Smart Corporate Cards & Automated Expense Reconciliation",
+        desc: "Corporate spend management solution paired with smart spending cards. Real-time digital receipt capture with OCR, multi-level approval hierarchies, and direct ERP auto-reconciliation.",
+        badge: "FinTech & Spends",
+        highlights: [
+          "Instant Mobile Receipt Capture with Automated OCR Expense Extraction",
+          "Custom Multi-Level Approval Hierarchies for Department Heads",
+          "Real-Time Card Spend Limits & Department Budget Allocations",
+          "Direct Auto-Reconciliation with AlignBooks, SAP & ERPNext"
+        ]
+      }
+    ]
   },
+
+  // 5) DIGITAL PRODUCTS
   {
-    id: "erpnext",
-    name: "ERPNext Custom Implementation",
-    category: "Enterprise ERP",
-    badge: "Open Source",
-    tagline: "Empower Your Business to Achieve Agility, Efficiency, and Sustainable Growth",
-    desc: "Built on high-flexibility open-source architecture with custom workflows, role-based dashboards, and complete module coverage without vendor lock-in.",
-    highlights: [
-      "100% License-Fee Free Core Architecture with Unlimited Users",
-      "Highly customizable DocTypes, Workflows, and Custom Print Formats",
-      "Built-in RESTful API for seamless third-party app connections",
-      "Modular coverage: Manufacturing, Healthcare, Education, Trading"
-    ],
-    features: [
-      "Modern Web UI & Mobile-First Progressive Web App",
-      "Comprehensive Manufacturing MRP & Work Order Scheduling",
-      "Multi-Currency Buying & Selling with Automated Forex Rates",
-      "Automated WhatsApp, SMS, and Email Trigger Alerts",
-      "Integrated Helpdesk, Asset Management & Knowledge Base"
-    ],
-    color: "indigo"
-  },
-  {
-    id: "tmbill",
-    name: "TMBill Restaurant Tech Platform",
-    category: "Industry Platforms & CRM",
-    badge: "14,000+ Restaurants",
-    tagline: "A Unified Tech Platform for Restaurant Growth — Serve Great Food, Leave Technology to Us!",
-    desc: "Full restaurant operating system (ROS) powering 14,000+ dining outlets across 35+ countries with zero middleware and direct POS integration.",
-    highlights: [
-      "Deployed in 14,000+ Restaurants across 35+ Countries over 11+ Years",
-      "Works 100% Offline with Automated Cloud Sync when connected",
-      "Direct Zomato, Swiggy, Talabat, Deliveroo & Careem Menu Sync",
-      "Kitchen Display System (KDS) & Captain Mobile Ordering App"
-    ],
-    features: [
-      "Cloud-based Restaurant POS with Table Management & Splitting",
-      "Contactless QR Code Digital Dining Menu & WhatsApp Orders",
-      "Recipe Management, Raw Material Costing & Inventory Tracking",
-      "Customer Loyalty Program, Cashback & Automated SMS Offers",
-      "24/7 Dedicated Live Phone & Chat Customer Support"
-    ],
-    stats: { clients: "14,000+", countries: "35+", years: "11+" },
-    color: "lime"
-  },
-  {
-    id: "cyber-security",
-    name: "Cyber Security & Cloud Defense",
-    category: "Security & Smart Hardware",
-    badge: "Zero Trust",
-    tagline: "Secure Today. Safer Tomorrow. AI-Powered Security.",
-    desc: "End-to-end cybersecurity solutions partnering with industry leaders like CrowdStrike Falcon to protect businesses, endpoints, and multi-cloud infrastructure.",
-    highlights: [
-      "CrowdStrike Falcon Next-Gen Endpoint Detection & Response (EDR)",
-      "Zero Trust Network Architecture & Identity Access Management (IAM)",
-      "24/7 Security Operations Center (SOC) with Automated Threat Containment",
-      "Vulnerability Assessment & Penetration Testing (VAPT)"
-    ],
-    features: [
-      "Cloud Security Posture Management for AWS, Azure & Google Cloud",
-      "Ransomware Prevention & Behavioral Threat Hunting",
-      "Data Loss Prevention (DLP) & End-to-End File Encryption",
-      "Phishing Simulation & Employee Cyber Awareness Training",
-      "Regulatory Compliance Audits (ISO 27001, GDPR, UAE NESA)"
-    ],
-    color: "red"
-  },
-  {
-    id: "autorox",
-    name: "Autorox Smart Garage OS",
-    category: "Industry Platforms & CRM",
-    badge: "36K+ Garages",
-    tagline: "Smart Software for Smart Garages — One Repair OS for 360° Management",
-    desc: "All-in-one garage management and customer retention platform empowering auto repair shops to boost revenue by 20% and reduce operational costs.",
-    highlights: [
-      "Powering 36,000+ Auto Repair Centers across 20+ Countries",
-      "Increases workshop revenue by up to 20% with smart upsell tracking",
-      "Live Customer Mobile App with Real-Time Vehicle Repair Status",
-      "Automated WhatsApp & SMS Service Reminders & Estimation Approval"
-    ],
-    features: [
-      "Digital Job Card Creation with Inspection Photos & Notes",
-      "Spare Parts Inventory, Barcoding & Vendor Purchase Orders",
-      "Mechanic Efficiency & Labor Commission Tracking",
-      "Insurance Claim Management & Corporate Fleet Billing",
-      "Full Accounting, VAT & GST Statutory Invoicing"
-    ],
-    metrics: [
-      "36,000+ Garages Powered",
-      "2,000+ Active Enterprise Customers",
-      "20+ Countries Deployed",
-      "Up to 30x ROI on Platform Investment"
-    ],
-    color: "cyan"
-  },
-  {
-    id: "digital-business-card",
-    name: "Digital Business Card & NFC Ecosystem",
-    category: "Security & Smart Hardware",
-    badge: "Smart NFC",
-    tagline: "Make Your Card, Your Brand Ambassador — Share, Connect, Grow",
-    desc: "Eco-friendly, tap-to-connect NFC smart cards and digital profiles for executives, sales teams, and businesses with built-in lead generation analytics.",
-    highlights: [
-      "Contactless Tap to Share on all modern iPhone & Android Devices",
-      "Custom Domain Support (e.g. card.yourcompany.com) with Luxury Finish",
-      "Real-Time Dynamic Profile Updates with zero reprinting costs",
-      "Automatic Lead Capture & Instant CRM Contact Synchronization"
-    ],
-    features: [
-      "Custom Metal, Wooden, Matte PVC, Keychain & Smart Sticker Finishes",
-      "Interactive Profile: Bio, Portfolio Gallery, Social Links & Video Intro",
-      "Integrated QR Code for camera scanning on older devices",
-      "Enterprise Team Management Dashboard with Centralized Analytics",
-      "One-Tap Add to Phone Contacts (vCard file generation)"
-    ],
-    hardwareRange: [
-      "Custom Metal Cards (Premium Luxury)",
-      "Eco Wooden Cards",
-      "Matte PVC Cards",
-      "NFC Multi-Color Keychains",
-      "NFC Smart Stickers (1 Dot / 3 Dot)",
-      "QR Countertop Standees for Retailers"
-    ],
+    id: "digital-products",
+    name: "Digital Products",
+    number: "05",
+    category: "Digital Products",
+    badge: "Smart Contactless",
+    tagline: "Smart NFC Profiles & Contactless Browser-Based Ordering",
+    desc: "Modern digital and contactless networking hardware and browser-based ordering systems that eliminate printing costs and streamline transactions.",
+    color: "teal",
+    icon: "CreditCard",
     plans: [
       {
         name: "Basic Plan",
@@ -405,160 +385,129 @@ export const products = [
         features: ["Everything in Advanced", "Custom Domain (yourbrand.com)", "Multiple Cards for Teams", "Video Introduction & Showcase", "Priority Concierge Support", "Full Analytics & CRM Sync"]
       }
     ],
-    color: "teal"
-  },
-  {
-    id: "social-automation",
-    name: "AI Social Media Automation",
-    category: "AI & Automation",
-    badge: "Multi-Platform",
-    tagline: "Smart. Scalable. Always On. Automate Conversations Across All Platforms.",
-    desc: "AI bots that automatically reply to comments, convert direct messages into qualified leads, schedule posts, and manage Google Reviews 24/7.",
-    highlights: [
-      "Automated Reply to Facebook & Instagram Comments and DMs in <5 Seconds",
-      "Google My Business (GMB) Automated Review Replies & 150+ Monthly Local Blogs",
-      "Story Mention Auto-Response & Anti-Spam Moderation",
-      "Direct Conversion Funnels Routing Inquiries into WhatsApp & CRM"
-    ],
-    features: [
-      "Cross-Platform Social Inbox for Meta, Google, LinkedIn & WhatsApp",
-      "AI Sentiment Detection prioritizing urgent sales opportunities",
-      "Automated Post Publishing, Hashtag Research & Caption Generation",
-      "QR Code Standees for Instant 5-Star Google Customer Reviews",
-      "Monthly Growth Analytics & Competitor Benchmarking Dashboards"
-    ],
-    channels: [
-      { name: "Facebook Automation", desc: "Auto reply to post comments, story replies, and automatic lead capture into CRM." },
-      { name: "Instagram Automation", desc: "Auto reply to DMs, story mentions, spam protection, and automated outreach." },
-      { name: "WhatsApp Business", desc: "Unlimited contacts, automated away messages, broadcast campaigns, and team inbox." },
-      { name: "Google My Business", desc: "Automated review replies, 150+ monthly blog posts, Google Review QR codes, and SEO boosts." }
-    ],
-    color: "violet"
-  },
-  {
-    id: "qobrix",
-    name: "Qobrix AI Real Estate CRM",
-    category: "Industry Platforms & CRM",
-    badge: "PropTech CRM",
-    tagline: "All-in-One Platform Built for Real Estate Pros & Developers",
-    desc: "Complete real estate platform with advanced back-end CRM, agent portals, property feed syndication (XML), and custom WordPress websites.",
-    highlights: [
-      "Multi-Portal Property Feed Syndication (XML) across Major Property Portals",
-      "Dedicated Agent & Client Portals with Secure 2FA Access",
-      "Interactive Property Matchmaker matching buyers with available units",
-      "Automated Contract Generation with Legally-Binding E-Signatures"
-    ],
-    features: [
-      "Centralized Lead Capture from Website, Facebook Ads & Property Portals",
-      "Comprehensive Property Inventory Management with Floorplans & Media",
-      "Agent Commission Calculation & Sales Performance Leaderboards",
-      "Automated Drip Email & WhatsApp Campaigns for Property Launches",
-      "Custom Real Estate Website Integration (WordPress & Headless CMS)"
-    ],
-    color: "sky"
-  },
-  {
-    id: "prospect-ai",
-    name: "Prospect AI Lead & Sales Engine",
-    category: "AI & Automation",
-    badge: "High Conversion",
-    tagline: "Your Lead Handling, Follow-Up & Conversion System",
-    desc: "Fully managed CRM, marketing automation, and AI sales agent built to eliminate lead leakage and follow up with every prospective buyer instantly.",
-    highlights: [
-      "Instant 60-Second Lead Response via 2-Way AI Conversation",
-      "Automated Multi-Channel Follow-Up via WhatsApp, SMS, Email & Voice",
-      "Zero Lead Leakage with Centralized Multi-Source Pipeline Capture",
-      "Automated Appointment Booking directly into Google & Outlook Calendars"
-    ],
-    features: [
-      "Smart Lead Qualification asking budget, timeline, and purchase intent",
-      "AI Meeting Scheduler with automated reminder sequences to stop no-shows",
-      "Live Team Handoff when high-value enterprise prospect requests a human",
-      "Full Pipeline Velocity Tracking & ROI Attribution by Ad Campaign",
-      "Pre-Integrated with Facebook Ads, Google Ads, TikTok & Website Forms"
-    ],
-    problemSolution: {
-      problem: "Most businesses lose leads because of slow follow-ups, inconsistent CRM updates, and manual fatigue.",
-      solution: "Prospect AI instantly captures leads across ads, qualifies them via 2-way AI conversations, and books appointments on autopilot."
-    },
-    color: "amber"
-  },
-  {
-    id: "xapa-loyalty",
-    name: "Xapa Smart Loyalty Platform",
-    category: "Industry Platforms & CRM",
-    badge: "Retail Loyalty",
-    tagline: "AI-Driven Experiential Loyalty & Rewards Ecosystem",
-    desc: "Drive repeat purchases and brand advocacy with AI-curated rewards, instant digital gift vouchers (Amazon, Flipkart, Cleartrip, Lakme, etc.), and omnichannel engagement.",
-    highlights: [
-      "Instant Digital Gift Voucher Integration (Amazon, Flipkart, Cleartrip, Lakme, 200+ brands)",
-      "AI-Curated Personalized Rewards based on customer buying habits",
-      "Tier-Based Gamified Loyalty Programs (Silver, Gold, Platinum, VIP)",
-      "Seamless POS & E-Commerce Integration for frictionless point redemption"
-    ],
-    features: [
-      "Omnichannel Loyalty: Web, In-Store POS, and Mobile App points sync",
-      "Exclusive Corporate Milestone Gifting & Employee Incentive Programs",
-      "Automated Birthday, Anniversary & Re-engagement Reward Triggers",
-      "Full Fraud Prevention & Secure QR Code Voucher Redemption",
-      "Comprehensive Customer Lifetime Value (CLV) Analytics Dashboard"
-    ],
-    pillars: [
-      "AI-Enabled Experiential Loyalty",
-      "Unique Creative Solutions & Collaterals",
-      "Exclusive Corporate & Milestone Gifting",
-      "Manpower Recruitment & Payroll Management"
-    ],
-    color: "emerald"
+    types: [
+      {
+        id: "digital-business-card",
+        name: "Digital Business Card",
+        subtype: "NFC Smart Tap Profile & Hardware Ecosystem",
+        tagline: "Make Your Card Your Brand Ambassador — Tap to Share, Connect, Grow",
+        desc: "Eco-friendly, tap-to-connect NFC smart business cards and dynamic digital profiles with automated lead capture, instant vCard saving, and team management dashboards.",
+        badge: "Tap NFC",
+        highlights: [
+          "Contactless Tap to Share on all modern iPhone & Android Devices",
+          "Custom Domain Integration (e.g. card.yourcompany.com) with Luxury Branding",
+          "Real-Time Dynamic Profile Updates with Zero Reprinting Costs",
+          "Instant CRM Lead Capture & WhatsApp Contact Sync"
+        ],
+        hardwareRange: [
+          "Custom Metal Cards (Premium Luxury)",
+          "Eco Wooden Cards",
+          "Matte PVC Cards",
+          "NFC Multi-Color Keychains",
+          "NFC Smart Stickers (1 Dot / 3 Dot)",
+          "QR Countertop Standees for Retailers"
+        ]
+      },
+      {
+        id: "smart-ordering",
+        name: "Smart Ordering",
+        subtype: "Contactless QR Dining & In-Store Ordering",
+        tagline: "Zero-App Download Mobile Browser Catalog & Ordering System",
+        desc: "Dynamic QR code smart ordering system enabling guests and shoppers to scan a QR code, browse interactive menus, place orders, and pay directly from their mobile browser.",
+        badge: "Browser QR",
+        highlights: [
+          "Zero App Download Required — 100% Mobile Browser Based",
+          "Instant Tabletop & Countertop QR Ordering with Real-Time Menu Updates",
+          "Direct Integration with Kitchen Order Tickets (KOT) & TMBill POS",
+          "Integrated Multi-Currency Gateways (Apple Pay, UPI, Credit Cards)"
+        ]
+      }
+    ]
   }
 ];
 
+// Helper to look up any product or type by ID
+export const findProductOrType = (id) => {
+  if (!id) return products[0];
+  const direct = products.find(p => p.id === id);
+  if (direct) return direct;
+  for (const p of products) {
+    const matchedType = p.types?.find(t => t.id === id);
+    if (matchedType) {
+      return {
+        ...matchedType,
+        parentProduct: p,
+        category: p.name,
+        color: p.color
+      };
+    }
+  }
+  return products[0];
+};
+
 export const services = [
+  // 1) CYBER SECURITY SERVICE
+  {
+    id: "cyber-security",
+    title: "Cyber Security Service",
+    tagline: "Follow Security Services Blueprint — Blue PPT",
+    desc: "Comprehensive enterprise cyber defense, continuous vulnerability assessments, and 24/7 SOC incident containment aligned with international standards.",
+    items: [
+      "Vulnerability Assessment & Penetration Testing (VAPT)",
+      "24/7 Security Operations Center (SOC) & Cloud Security Defense",
+      "Endpoint Detection & Incident Response (Blue Team Operations)",
+      "Zero Trust Architecture & Network Security Hardening",
+      "Regulatory Compliance & Security Audit Governance (ISO 27001, UAE NESA, GDPR)"
+    ],
+    icon: "Shield"
+  },
+
+  // 2) AI DIGITAL TRANSFORMATION
   {
     id: "digital-transformation",
-    title: "AI-Powered Marketing & Digital Transformation",
-    tagline: "Innovating Today, Transforming Tomorrow",
-    desc: "Comprehensive 360-degree marketing automation and digital growth services tailored to elevate brand visibility and inbound sales.",
+    title: "AI Digital Transformation",
+    tagline: "SEO & GEO Services (Pixis.AI) & Omnichannel Automation",
+    desc: "Accelerating brand authority and revenue through cutting-edge Generative Engine Optimization (GEO), AI citation engineering, and multi-platform automation.",
     items: [
-      "Social Media Management & Omni-Channel Automation",
-      "Google My Business (GMB) Optimization & Automated Review Management",
-      "SEO & SMO Automation with Generative Engine Optimization (GEO)",
-      "Brand Development & Corporate Identity Design",
-      "Creative Design & Digital Marketing Collaterals",
-      "Content Marketing, Copywriting & Strategy Automation",
-      "Real-Time Analytics & Performance Reporting Dashboards"
+      "SEO & GEO Services (Pixis.AI - Generative Engine Optimization)",
+      "Multi-Model Citation Engineering (ChatGPT, Gemini, Perplexity, Copilot)",
+      "Omni-Channel Social Media & GMB Review Automation",
+      "Intelligent Marketing Funnels & Conversational Chatflows",
+      "Enterprise Digital Transformation & Process Modernization"
     ],
-    icon: "Megaphone"
+    icon: "Sparkles"
   },
+
+  // 3) WEB APPLICATION DEVELOPMENT (AI POWERED - IMPORTANT HIGHLIGHT)
   {
     id: "web-app-dev",
-    title: "Web & Mobile App Engineering",
-    tagline: "You Dream It. We Code It.",
-    desc: "Full-cycle software engineering from UX architecture to cloud infrastructure, building fast, secure, and scalable digital solutions.",
-    capabilities: [
-      "Enterprise Web Applications (React, Next.js, Vue, Tailwind CSS)",
-      "Cross-Platform & Native Mobile Apps (Flutter, React Native, iOS Swift, Android Kotlin)",
-      "Cloud Infrastructure & DevOps (AWS, Microsoft Azure, Google Cloud)",
-      "Database Architecture & API Microservices (Node.js, Python FastAPI, PostgreSQL, MongoDB)",
-      "UI/UX Design Systems & High-Fidelity Interactive Prototypes",
-      "Custom E-Commerce & Payment Gateway Implementations (Stripe, Razorpay, Telr, CC Avenue)"
+    title: "Web Application Development",
+    tagline: "AI-Powered Full-Cycle Engineering — Important Highlight",
+    desc: "State-of-the-art web and mobile engineering supercharged with AI integrations. We build responsive, scalable, and ultra-secure software for modern enterprises.",
+    items: [
+      "Static Website Development (Blazing-Fast High-Converting Web Portals)",
+      "Dynamic Website Development (Complex Data-Driven Cloud Platforms)",
+      "E-Commerce Web Application Development (Custom Cart, Gateways & Inventory)",
+      "Mobile Apps Development (Native iOS, Android & Flutter Cross-Platform)",
+      "AI-Powered Feature Engineering & Copilot Integrations"
     ],
     icon: "Code2"
   },
+
+  // 4) AI AGENTS & AI CHAT BOTS (NEED MORE RESEARCH)
   {
-    id: "academic-industry",
-    title: "Academic - Industry 4.0 Collaborations",
-    tagline: "Empowering Next-Generation Tech Leaders",
-    desc: "AICTE-accredited academic partnerships providing engineering institutions with live industrial training, IEEE project incubation, and faculty upskilling.",
-    programs: [
-      "Student Training Programs (STPs) in AI/ML, Cloud & Cybersecurity",
-      "Final Year B.E. / B.Tech / M.Tech / MCA IEEE Capstone Projects",
-      "Faculty Development Programs (FDPs) on Emerging Technologies",
-      "Industrial Internships with Real Corporate Sprints",
-      "Ph.D & Research Lab Guidance with Patent / Paper Publication Support",
-      "Campus Placement Acceleration & Technical Interview Bootcamps"
+    id: "ai-agents-chatbots",
+    title: "AI Agents & AI Chatbots",
+    tagline: "Autonomous Multi-Agent Systems & Digital AI Workforce (Need More Research)",
+    desc: "Designing, training, and deploying purpose-built autonomous AI agents that reason, analyze data, take action, and operate 24/7 across critical business domains.",
+    items: [
+      "Building Intelligent Custom Agent (Domain-Specific Fine-Tuned LLMs)",
+      "Business Analyst Agent (Market Intelligence, Competitor Analysis & KPI Reports)",
+      "Build Stock / Crypto / Forex Agent (Algorithmic Sentiment & Technical Telemetry)",
+      "Build Voice Calling Agent (Ultra-Low Latency Telephony Conversational AI)",
+      "Build Digital AI Employees (BigDot - 24/7 Autonomous Enterprise Workers)"
     ],
-    icon: "GraduationCap"
+    icon: "Bot"
   }
 ];
 
@@ -771,10 +720,10 @@ export const officeLocations = [
     flag: "🇮🇳",
     badge: "HQ",
     type: "Engineering Headquarters & Innovation Lab",
-    address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Yelahanka, Bengaluru, Karnataka, India - 560064",
-    phone: "+91 9742682028",
-    email: "info@zetacoding.com",
-    whatsapp: "919742682028"
+    address: "1st Floor, Above Pai Vista, Opp. Rail Wheel Factory, Bengaluru, Karnataka, India - 560064",
+    phone: "+91 8867845719",
+    email: "infor@zetacoding.com",
+    whatsapp: "918867845719"
   },
   {
     city: "Mangaluru Branch",
@@ -783,9 +732,9 @@ export const officeLocations = [
     badge: "Regional Hub",
     type: "Software Development & Regional Training Center",
     address: "Ground Floor, City Centre Mall / KS Rao Road, Mangaluru, Karnataka, India - 575001",
-    phone: "+91 824 298 4028",
+    phone: "+91 8242984028",
     email: "mangaluru@zetacoding.com",
-    whatsapp: "919742682028"
+    whatsapp: "918867845719"
   },
   {
     city: "Dubai LLC Office",

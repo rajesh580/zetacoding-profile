@@ -1,6 +1,5 @@
 import React from 'react';
 import ProductShowcase from '../components/ProductShowcase';
-import ZetaWapCRMPreview from '../components/ZetaWapCRMPreview';
 import DigitalCardCalculator from '../components/DigitalCardCalculator';
 import { Layers, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -28,17 +27,13 @@ export default function ProductsPage() {
             Products & <span className="bg-gradient-to-r from-[#85cc38] to-[#72bf44] bg-clip-text text-transparent">Platforms Suite</span>
           </h1>
           <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-3xl font-normal leading-relaxed text-left">
-            14+ battle-tested platforms spanning Cloud ERP, AI Voice/Vision Agents, WhatsApp Cloud CRM, Restaurant & Garage OS, and Cyber Defense.
+            5 enterprise product suites spanning Cyber Security, Cloud ERP, CRM, Vertical Industry Management, and Digital Contactless Products.
           </p>
         </motion.div>
       </div>
 
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
         <ProductShowcase />
-      </div>
-
-      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
-        <ZetaWapCRMPreview />
       </div>
 
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Bot, Globe, ShieldCheck, Layers, Sparkles } from 'lucide-react';
+import { Bot, Shield, Code2, Sparkles } from 'lucide-react';
 
 /**
  * Hero3DHologram
@@ -120,11 +121,11 @@ export default function Hero3DHologram() {
             <div className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#72bf44] to-transparent top-0 animate-shimmer" />
 
             {/* Glowing Logo */}
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/95 p-1.5 sm:p-2 shadow-2xl flex items-center justify-center border border-white/20 transform group-hover:scale-105 transition-transform duration-300">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white/95 p-1.5 shadow-2xl flex items-center justify-center border border-white/20 transform group-hover:scale-105 transition-transform duration-300 overflow-hidden">
               <img
                 src="/assets/zetacoding_logo_transparent.png"
                 alt="ZETACODING"
-                className="w-full h-full object-contain filter drop-shadow"
+                className="w-full h-full max-h-7 max-w-7 sm:max-h-8 sm:max-w-8 object-contain filter drop-shadow"
                 onError={(e) => { e.target.src = "/assets/page_2_img_1.png"; }}
               />
             </div>
@@ -146,103 +147,110 @@ export default function Hero3DHologram() {
           </div>
         </motion.div>
 
-        {/* 4 Orbiting 3D Holographic Satellites Cleanly Positioned in Corners */}
+        {/* 4 Orbiting 3D Holographic Satellites - 4 Core Services */}
         
-        {/* Satellite 1: Top-Right - AI Agents & GEO Search */}
-        <div
-          className="absolute -top-1 -right-1 sm:top-1 sm:-right-3 z-30 pointer-events-auto"
-          style={{ transform: 'translateZ(75px)' }}
-        >
-          <motion.div
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#72bf44]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[145px] sm:max-w-[210px]"
-          >
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#72bf44]/20 border border-[#72bf44]/40 flex items-center justify-center text-[#85cc38] shrink-0">
-              <Bot size={13} className="sm:w-4 sm:h-4" />
-            </div>
-            <div className="text-left pr-1 truncate">
-              <div className="text-[9px] sm:text-[11px] font-black text-white flex items-center gap-1 leading-tight truncate">
-                <span>AI Agents & GEO</span>
-                <Sparkles size={9} className="text-[#85cc38] animate-spin shrink-0 hidden sm:inline" />
-              </div>
-              <div className="text-[7px] sm:text-[9px] font-bold text-[#85cc38]">
-                99% Citation Rate
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Satellite 2: Bottom-Left - Dual Global Hubs */}
-        <div
-          className="absolute -bottom-1 -left-1 sm:bottom-1 sm:-left-3 z-30 pointer-events-auto"
-          style={{ transform: 'translateZ(70px)' }}
-        >
-          <motion.div
-            animate={{ y: [5, -5, 5] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-            className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#38bdf8]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[145px] sm:max-w-[210px]"
-          >
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#38bdf8]/20 border border-[#38bdf8]/40 flex items-center justify-center text-[#38bdf8] shrink-0">
-              <Globe size={13} className="sm:w-4 sm:h-4" />
-            </div>
-            <div className="text-left pr-1 truncate">
-              <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate">
-                Dual Global Hubs
-              </div>
-              <div className="text-[7px] sm:text-[9px] font-bold text-[#38bdf8]">
-                India HQ • Dubai LLC
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Satellite 3: Top-Left - ISO 9001 & DED Licensed */}
+        {/* Satellite 1: Top-Left - Cyber Security Service */}
         <div
           className="absolute -top-1 -left-1 sm:top-1 sm:-left-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(65px)' }}
         >
-          <motion.div
-            animate={{ y: [4, -6, 4] }}
-            transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#f0b31a]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[145px] sm:max-w-[210px]"
-          >
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#f0b31a]/20 border border-[#f0b31a]/40 flex items-center justify-center text-[#f0b31a] shrink-0">
-              <ShieldCheck size={13} className="sm:w-4 sm:h-4" />
-            </div>
-            <div className="text-left pr-1 truncate">
-              <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate">
-                Audited & Certified
+          <Link to="/services">
+            <motion.div
+              animate={{ y: [4, -6, 4] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#38bdf8]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+            >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#38bdf8]/20 border border-[#38bdf8]/40 flex items-center justify-center text-[#38bdf8] shrink-0 group-hover:scale-110 transition-transform">
+                <Shield size={13} className="sm:w-4 sm:h-4" />
               </div>
-              <div className="text-[7px] sm:text-[9px] font-bold text-[#f0b31a]">
-                ISO 9001:2015
+              <div className="text-left pr-1 truncate">
+                <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate group-hover:text-[#38bdf8] transition-colors">
+                  Cyber Security
+                </div>
+                <div className="text-[7px] sm:text-[9px] font-bold text-[#38bdf8]">
+                  VAPT &amp; 24/7 SOC
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         </div>
 
-        {/* Satellite 4: Bottom-Right - 14+ Enterprise Platforms */}
+        {/* Satellite 2: Top-Right - AI Digital Transformation */}
+        <div
+          className="absolute -top-1 -right-1 sm:top-1 sm:-right-3 z-30 pointer-events-auto"
+          style={{ transform: 'translateZ(75px)' }}
+        >
+          <Link to="/services">
+            <motion.div
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#72bf44]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+            >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#72bf44]/20 border border-[#72bf44]/40 flex items-center justify-center text-[#85cc38] shrink-0 group-hover:scale-110 transition-transform">
+                <Sparkles size={13} className="sm:w-4 sm:h-4 animate-spin-slow" />
+              </div>
+              <div className="text-left pr-1 truncate">
+                <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate group-hover:text-[#85cc38] transition-colors">
+                  AI Transformation
+                </div>
+                <div className="text-[7px] sm:text-[9px] font-bold text-[#85cc38]">
+                  SEO &amp; GEO (Pixic AI)
+                </div>
+              </div>
+            </motion.div>
+          </Link>
+        </div>
+
+        {/* Satellite 3: Bottom-Left - Web Application Development */}
+        <div
+          className="absolute -bottom-1 -left-1 sm:bottom-1 sm:-left-3 z-30 pointer-events-auto"
+          style={{ transform: 'translateZ(70px)' }}
+        >
+          <Link to="/services">
+            <motion.div
+              animate={{ y: [5, -5, 5] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#f0b31a]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+            >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#f0b31a]/20 border border-[#f0b31a]/40 flex items-center justify-center text-[#f0b31a] shrink-0 group-hover:scale-110 transition-transform">
+                <Code2 size={13} className="sm:w-4 sm:h-4" />
+              </div>
+              <div className="text-left pr-1 truncate">
+                <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate group-hover:text-[#f0b31a] transition-colors">
+                  Web &amp; App Dev
+                </div>
+                <div className="text-[7px] sm:text-[9px] font-bold text-[#f0b31a]">
+                  AI-Powered Systems
+                </div>
+              </div>
+            </motion.div>
+          </Link>
+        </div>
+
+        {/* Satellite 4: Bottom-Right - AI Agents & AI Chatbots */}
         <div
           className="absolute -bottom-1 -right-1 sm:bottom-1 sm:-right-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(80px)' }}
         >
-          <motion.div
-            animate={{ y: [-4, 6, -4] }}
-            transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-            className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#a855f7]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[145px] sm:max-w-[210px]"
-          >
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#a855f7]/20 border border-[#a855f7]/40 flex items-center justify-center text-[#c084fc] shrink-0">
-              <Layers size={13} className="sm:w-4 sm:h-4" />
-            </div>
-            <div className="text-left pr-1 truncate">
-              <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate">
-                14+ Software Suites
+          <Link to="/services">
+            <motion.div
+              animate={{ y: [-4, 6, -4] }}
+              transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#a855f7]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+            >
+              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#a855f7]/20 border border-[#a855f7]/40 flex items-center justify-center text-[#c084fc] shrink-0 group-hover:scale-110 transition-transform">
+                <Bot size={13} className="sm:w-4 sm:h-4" />
               </div>
-              <div className="text-[7px] sm:text-[9px] font-bold text-[#c084fc]">
-                Cloud ERP, SAP, CRM
+              <div className="text-left pr-1 truncate">
+                <div className="text-[9px] sm:text-[11px] font-black text-white leading-tight truncate group-hover:text-[#c084fc] transition-colors">
+                  AI Agents &amp; Bots
+                </div>
+                <div className="text-[7px] sm:text-[9px] font-bold text-[#c084fc]">
+                  Autonomous Workforce
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </Link>
         </div>
 
       </motion.div>
