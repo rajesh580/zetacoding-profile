@@ -18,21 +18,21 @@ export default function ServicesSection() {
       <div className="w-full">
         
         {/* 4 Navigation Tabs */}
-        <div className="flex flex-wrap items-center justify-start gap-3 mb-8">
+        <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 mb-6 sm:mb-8">
           {services.map((svc) => (
             <button
               key={svc.id}
               onClick={() => setActiveTab(svc.id)}
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm ${
+              className={`flex items-center gap-2 sm:gap-2.5 px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm transition-all duration-200 shadow-sm ${
                 activeTab === svc.id
                   ? 'btn-3d-green text-slate-950 font-black'
                   : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'
               }`}
             >
-              {svc.id === 'cyber-security' && <Shield size={18} />}
-              {svc.id === 'digital-transformation' && <Sparkles size={18} />}
-              {svc.id === 'web-app-dev' && <Code2 size={18} />}
-              {svc.id === 'ai-agents-chatbots' && <Bot size={18} />}
+              {svc.id === 'cyber-security' && <Shield size={16} className="sm:w-[18px] sm:h-[18px]" />}
+              {svc.id === 'digital-transformation' && <Sparkles size={16} className="sm:w-[18px] sm:h-[18px]" />}
+              {svc.id === 'web-app-dev' && <Code2 size={16} className="sm:w-[18px] sm:h-[18px]" />}
+              {svc.id === 'ai-agents-chatbots' && <Bot size={16} className="sm:w-[18px] sm:h-[18px]" />}
               <span>{svc.title}</span>
             </button>
           ))}
@@ -49,7 +49,7 @@ export default function ServicesSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
-              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+              className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
@@ -132,7 +132,7 @@ export default function ServicesSection() {
                   <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
                     >
                       <span>Schedule a Cyber Security Consultation</span>
                       <ArrowRight size={15} />
@@ -202,7 +202,7 @@ export default function ServicesSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
-              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+              className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
@@ -256,7 +256,7 @@ export default function ServicesSection() {
                   <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
                     >
                       <span>Inquire for AI Digital Transformation</span>
                       <ArrowRight size={15} />
@@ -338,7 +338,7 @@ export default function ServicesSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
-              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+              className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
@@ -421,7 +421,7 @@ export default function ServicesSection() {
                   <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
                     >
                       <span>Discuss Your Project Architecture</span>
                       <ArrowRight size={15} />
@@ -486,7 +486,7 @@ export default function ServicesSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.4 }}
-              className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
+              className="p-5 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/30 w-full"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
@@ -545,7 +545,7 @@ export default function ServicesSection() {
                   <div className="pt-2">
                     <Link
                       to="/contact"
-                      className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl btn-3d-green text-slate-950 font-black text-xs shadow-lg transition-all"
                     >
                       <span>Deploy Autonomous AI Agents</span>
                       <ArrowRight size={15} />

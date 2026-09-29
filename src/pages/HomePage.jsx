@@ -343,7 +343,7 @@ export default function HomePage({ onOpenCertModal }) {
 
       {/* 4. GEO & AI SEARCH REVOLUTION - FULL WIDTH */}
       <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel-glow relative overflow-hidden w-full text-left">
+        <div className="p-5 sm:p-8 md:p-12 rounded-3xl glass-panel-glow relative overflow-hidden w-full text-left">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#9333ea]/25 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#7e22ce]/25 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute inset-0 cyber-grid opacity-30 pointer-events-none" />
@@ -427,7 +427,7 @@ export default function HomePage({ onOpenCertModal }) {
 
       {/* GLOBAL LOCATIONS & SCOPING CONSULTATION CTA - FULL WIDTH */}
       <section className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 text-left">
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden w-full text-left">
+        <div className="p-5 sm:p-8 md:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 relative overflow-hidden w-full text-left">
           <div className="space-y-2 text-left relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#72bf44]/20 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-1 border border-[#72bf44]/40">
               <Building2 size={13} className="animate-spin-slow" />

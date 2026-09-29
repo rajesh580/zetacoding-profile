@@ -16,14 +16,14 @@ export default function AccreditationsModal({ isOpen, onClose }) {
       >
         
         {/* Header */}
-        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between bg-[#150724] text-white">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-white/10 flex items-center justify-between bg-[#150724] text-white">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#72bf44] text-slate-950 flex items-center justify-center font-bold">
-              <ShieldCheck size={20} />
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-[#72bf44] text-slate-950 flex items-center justify-center font-bold shrink-0">
+              <ShieldCheck size={18} className="sm:w-5 sm:h-5" />
             </div>
             <div>
-              <h3 className="text-lg font-black text-white font-display">Official Accreditations & Licenses Vault</h3>
-              <p className="text-xs text-slate-300">Verified Corporate Certifications across India & UAE</p>
+              <h3 className="text-sm sm:text-lg font-black text-white font-display">Official Accreditations Vault</h3>
+              <p className="text-[10px] sm:text-xs text-slate-300">Verified Corporate Certifications across India &amp; UAE</p>
             </div>
           </div>
           <button
@@ -35,7 +35,7 @@ export default function AccreditationsModal({ isOpen, onClose }) {
         </div>
 
         {/* Tab Selection */}
-        <div className="px-6 pt-3 pb-2 border-b border-white/10 bg-[#080a13] flex flex-wrap gap-2">
+        <div className="px-4 sm:px-6 pt-2.5 pb-2 border-b border-white/10 bg-[#080a13] flex flex-wrap gap-1.5 sm:gap-2">
           {[
             { id: 'dubai', name: 'Dubai Commercial License (DED)' },
             { id: 'iso', name: 'ISO 9001:2015 Certificate' },
@@ -45,7 +45,7 @@ export default function AccreditationsModal({ isOpen, onClose }) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all ${
                 activeTab === tab.id
                   ? 'btn-3d-green text-slate-950 font-black shadow-md'
                   : 'bg-white/5 text-slate-300 hover:text-white border border-white/10'
@@ -57,7 +57,7 @@ export default function AccreditationsModal({ isOpen, onClose }) {
         </div>
 
         {/* Body Content */}
-        <div className="flex-1 p-6 overflow-y-auto space-y-6 bg-[#0c0f1a]">
+        <div className="flex-1 p-4 sm:p-6 overflow-y-auto space-y-5 bg-[#0c0f1a]">
           
           {/* Dubai License Tab */}
           {activeTab === 'dubai' && (
@@ -185,11 +185,11 @@ export default function AccreditationsModal({ isOpen, onClose }) {
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 border-t border-white/10 bg-[#080a13] flex items-center justify-between text-xs text-slate-400">
-          <span>Official verifiable documentation under Government of Dubai & Govt of India</span>
+        <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-white/10 bg-[#080a13] flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-slate-400">
+          <span>Official verifiable documentation under Government of Dubai &amp; Govt of India</span>
           <button
             onClick={onClose}
-            className="px-6 py-2.5 rounded-xl btn-3d-green text-slate-950 font-black transition-all shadow-md"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-xl btn-3d-green text-slate-950 font-black transition-all shadow-md shrink-0"
           >
             Close Vault
           </button>

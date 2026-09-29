@@ -152,10 +152,10 @@ export default function AboutJourney({ onOpenCertModal }) {
       <div className="w-full space-y-10">
         
         {/* Mission & Vision Side by Side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 text-left">
           
           {/* Mission Card */}
-          <Card3D maxTilt={8} className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/40 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <Card3D maxTilt={8} className="p-6 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#72bf44]/40 flex flex-col justify-between shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="space-y-4 relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-[#72bf44]/15 border border-[#72bf44]/40 text-[#85cc38] flex items-center justify-center shadow-lg">
@@ -175,7 +175,7 @@ export default function AboutJourney({ onOpenCertModal }) {
           </Card3D>
 
           {/* Vision Card */}
-          <Card3D maxTilt={8} className="p-8 sm:p-10 rounded-3xl glass-panel-glow border border-[#38bdf8]/40 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+          <Card3D maxTilt={8} className="p-6 sm:p-8 md:p-10 rounded-3xl glass-panel-glow border border-[#38bdf8]/40 flex flex-col justify-between shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#38bdf8]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="space-y-4 relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-[#38bdf8]/15 border border-[#38bdf8]/40 text-[#38bdf8] flex items-center justify-center shadow-lg">
@@ -197,7 +197,7 @@ export default function AboutJourney({ onOpenCertModal }) {
         </div>
 
         {/* Corporate Values */}
-        <div className="p-8 sm:p-10 rounded-3xl glass-panel border border-white/10 text-left">
+        <div className="p-6 sm:p-8 md:p-10 rounded-3xl glass-panel border border-white/10 text-left">
           <div className="mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#72bf44]/15 text-[#85cc38] text-xs font-bold uppercase tracking-wider mb-2 border border-[#72bf44]/30">
               <Gem size={13} />
@@ -280,7 +280,7 @@ export default function AboutJourney({ onOpenCertModal }) {
         </div>
 
         {/* Infographic Visual Diagram Card */}
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 relative overflow-hidden shadow-2xl">
+        <div className="p-5 sm:p-8 md:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 relative overflow-hidden shadow-2xl">
           {/* Ambient Cosmic Lights */}
           <div className="absolute top-0 left-1/4 w-80 h-80 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-[#9333ea]/15 rounded-full blur-3xl pointer-events-none" />
@@ -289,7 +289,7 @@ export default function AboutJourney({ onOpenCertModal }) {
           <div className="hidden lg:block absolute top-[94px] left-16 right-16 h-1 bg-gradient-to-r from-[#72bf44]/30 via-[#85cc38] to-[#38bdf8] shadow-[0_0_12px_#72bf44] z-0" />
 
           {/* Milestone Infographic Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
             {journeyTimeline.map((item, idx) => (
               <div 
                 key={idx}
@@ -333,15 +333,15 @@ export default function AboutJourney({ onOpenCertModal }) {
           </div>
 
           {/* Infographic Footer Strip */}
-          <div className="mt-10 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs">
-            <div className="flex items-center gap-2 text-slate-300">
-              <Sparkles size={16} className="text-[#85cc38]" />
+          <div className="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <div className="flex items-center gap-2 text-slate-300 text-center sm:text-left">
+              <Sparkles size={16} className="text-[#85cc38] shrink-0" />
               <span>5+ Years of Proven Innovation: From IEEE Academic Roots to Dual-Hub Enterprise Deployment</span>
             </div>
 
             <button
               onClick={onOpenCertModal}
-              className="px-5 py-2 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/20 transition-all flex items-center gap-1.5"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white/10 hover:bg-[#72bf44] hover:text-slate-950 text-white font-bold text-xs border border-white/20 transition-all flex items-center justify-center gap-1.5 shrink-0"
             >
               <ShieldCheck size={14} />
               <span>Verify Accreditations &amp; Licenses</span>

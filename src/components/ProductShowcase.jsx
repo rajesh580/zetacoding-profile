@@ -43,12 +43,12 @@ export default function ProductShowcase() {
       <div className="w-full">
         
         {/* Category Tabs for the 5 Main Products */}
-        <div className="flex flex-wrap items-center justify-start gap-2.5 mb-10">
+        <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-2.5 mb-8 sm:mb-10">
           {categories.map((category) => (
             <button
               key={category.name}
               onClick={() => setActiveCategory(category.name)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm ${
                 activeCategory === category.name
                   ? 'btn-3d-green text-slate-950 font-black'
                   : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/10'
@@ -73,7 +73,7 @@ export default function ProductShowcase() {
                 transition={{ duration: 0.4 }}
                 className="w-full"
               >
-                <div className="rounded-3xl glass-panel-glow p-7 sm:p-10 border border-white/10 hover:border-[#72bf44]/60 transition-all shadow-2xl relative overflow-hidden text-left">
+                <div className="rounded-3xl glass-panel-glow p-5 sm:p-8 md:p-10 border border-white/10 hover:border-[#72bf44]/60 transition-all shadow-2xl relative overflow-hidden text-left">
                   
                   {/* Subtle Background Glow */}
                   <div className="absolute top-0 right-0 w-80 h-80 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -217,22 +217,22 @@ export default function ProductShowcase() {
                   </div>
 
                   {/* Suite Action Buttons */}
-                  <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                  <div className="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div className="text-xs text-slate-400 font-medium">
                       Enterprise SLA &amp; Architecture Scoping Available in India HQ &amp; Dubai LLC
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
                       <Link
                         to="/contact"
-                        className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-white/20 transition-all"
+                        className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold text-xs border border-white/20 transition-all"
                       >
                         Inquire for {product.name}
                       </Link>
 
                       <Link
                         to={`/products/${product.id}`}
-                        className="px-6 py-3 rounded-xl btn-3d-green text-slate-950 font-black text-xs transition-all flex items-center gap-1.5 shadow-lg"
+                        className="w-full sm:w-auto text-center justify-center px-6 py-3 rounded-xl btn-3d-green text-slate-950 font-black text-xs transition-all flex items-center gap-1.5 shadow-lg"
                       >
                         <span>View Full Architecture &amp; Scope</span>
                         <ArrowRight size={14} />

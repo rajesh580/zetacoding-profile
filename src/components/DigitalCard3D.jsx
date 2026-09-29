@@ -57,7 +57,7 @@ export default function DigitalCard3D({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
         onClick={() => setIsFlipped(!isFlipped)}
-        className="w-full max-w-[340px] sm:max-w-[390px] h-52 sm:h-56 cursor-pointer transform-gpu"
+        className="w-full max-w-[290px] xs:max-w-[340px] sm:max-w-[390px] h-48 xs:h-52 sm:h-56 cursor-pointer transform-gpu"
         style={{ perspective: 1200 }}
       >
         <motion.div
@@ -78,24 +78,24 @@ export default function DigitalCard3D({
           {/* CARD FRONT */}
           <div
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(0deg)' }}
-            className={`absolute inset-0 rounded-2xl p-5 sm:p-6 bg-gradient-to-br ${getFinishGradient()} border-2 text-white flex flex-col justify-between overflow-hidden`}
+            className={`absolute inset-0 rounded-2xl p-4 xs:p-5 sm:p-6 bg-gradient-to-br ${getFinishGradient()} border-2 text-white flex flex-col justify-between overflow-hidden`}
           >
             {/* Holographic Gloss Foil */}
             <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-45 pointer-events-none animate-shimmer" />
 
             {/* Top Row: Chip & NFC Icon */}
             <div className="flex items-center justify-between relative z-10">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2 xs:gap-2.5">
                 {/* Gold EMV Chip */}
-                <div className="w-10 h-7 rounded-md bg-gradient-to-br from-[#f0b31a] via-[#fbbf24] to-[#b45309] border border-amber-300 p-1 flex flex-col justify-between shadow-sm">
+                <div className="w-8 h-6 xs:w-10 xs:h-7 rounded-md bg-gradient-to-br from-[#f0b31a] via-[#fbbf24] to-[#b45309] border border-amber-300 p-1 flex flex-col justify-between shadow-sm">
                   <div className="w-full h-0.5 bg-amber-900/40 rounded-full" />
                   <div className="w-full h-0.5 bg-amber-900/40 rounded-full" />
                 </div>
-                <Wifi size={18} className="text-[#85cc38] rotate-90" />
-                <span className="text-[10px] font-mono tracking-widest text-[#85cc38] uppercase font-bold">NFC SMART</span>
+                <Wifi size={16} className="text-[#85cc38] rotate-90 xs:w-[18px] xs:h-[18px]" />
+                <span className="text-[9px] xs:text-[10px] font-mono tracking-widest text-[#85cc38] uppercase font-bold">NFC SMART</span>
               </div>
 
-              <div className="w-8 h-8 rounded-lg bg-white/10 p-1 border border-white/20 flex items-center justify-center">
+              <div className="w-7 h-7 xs:w-8 xs:h-8 rounded-lg bg-white/10 p-1 border border-white/20 flex items-center justify-center">
                 <img
                   src="/assets/zetacoding_logo_transparent.png"
                   alt="Zetacoding"
@@ -106,24 +106,24 @@ export default function DigitalCard3D({
             </div>
 
             {/* Middle: Brand Emblem & Corporate Digital Pass (No personal name per specification) */}
-            <div className="relative z-10 my-auto text-left space-y-1">
+            <div className="relative z-10 my-auto text-left space-y-0.5 xs:space-y-1">
               <div className="flex items-center gap-2">
-                <span className="text-2xl sm:text-3xl font-black text-white font-display tracking-wider block">
+                <span className="text-xl xs:text-2xl sm:text-3xl font-black text-white font-display tracking-wider block">
                   ZETA<span className="text-[#85cc38]">CODING</span>
                 </span>
               </div>
-              <p className="text-xs text-[#85cc38] font-mono font-bold tracking-widest uppercase">
+              <p className="text-[10px] xs:text-xs text-[#85cc38] font-mono font-bold tracking-widest uppercase">
                 SMART NFC BUSINESS PROFILE
               </p>
-              <p className="text-[11px] text-slate-300 font-medium">
+              <p className="text-[10px] xs:text-[11px] text-slate-300 font-medium">
                 Tap to Connect • Instant Lead &amp; vCard Sync
               </p>
             </div>
 
             {/* Bottom Row: Tap info & Brand */}
-            <div className="flex items-center justify-between text-[10px] text-slate-300 font-mono relative z-10 pt-2 border-t border-white/10">
+            <div className="flex items-center justify-between text-[9px] xs:text-[10px] text-slate-300 font-mono relative z-10 pt-1.5 xs:pt-2 border-t border-white/10">
               <span className="flex items-center gap-1.5 text-[#85cc38] font-bold">
-                <Smartphone size={13} />
+                <Smartphone size={12} className="xs:w-[13px] xs:h-[13px]" />
                 <span>TAP TO EXCHANGE</span>
               </span>
               <span className="text-white/80 font-bold uppercase">{finish}</span>
@@ -133,15 +133,15 @@ export default function DigitalCard3D({
           {/* CARD BACK */}
           <div
             style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
-            className="absolute inset-0 rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-[#0c1a10] via-[#1a0a24] to-[#120418] border-2 border-[#85cc38]/60 shadow-[0_15px_35px_rgba(114,191,68,0.3)] text-white flex flex-col justify-between overflow-hidden"
+            className="absolute inset-0 rounded-2xl p-4 xs:p-5 sm:p-6 bg-gradient-to-br from-[#0c1a10] via-[#1a0a24] to-[#120418] border-2 border-[#85cc38]/60 shadow-[0_15px_35px_rgba(114,191,68,0.3)] text-white flex flex-col justify-between overflow-hidden"
           >
             {/* Magnetic Stripe Bar */}
-            <div className="absolute top-4 inset-x-0 h-9 bg-slate-950 border-y border-white/10" />
+            <div className="absolute top-3 xs:top-4 inset-x-0 h-8 xs:h-9 bg-slate-950 border-y border-white/10" />
 
-            <div className="relative z-10 mt-10 flex items-center justify-between gap-4">
+            <div className="relative z-10 mt-8 xs:mt-10 flex items-center justify-between gap-3 xs:gap-4">
               {/* QR Code Container */}
-              <div className="w-20 h-20 bg-white rounded-xl p-1.5 shadow-lg border border-[#72bf44] flex items-center justify-center shrink-0">
-                <QrCode size={66} className="text-slate-950" />
+              <div className="w-16 h-16 xs:w-20 xs:h-20 bg-white rounded-xl p-1 xs:p-1.5 shadow-lg border border-[#72bf44] flex items-center justify-center shrink-0">
+                <QrCode size={52} className="text-slate-950 xs:w-[66px] xs:h-[66px]" />
               </div>
 
               <div className="space-y-1 text-left text-[11px]">

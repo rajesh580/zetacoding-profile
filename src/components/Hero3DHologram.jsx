@@ -36,7 +36,7 @@ export default function Hero3DHologram() {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      className="relative w-full max-w-[440px] sm:max-w-[480px] aspect-square flex items-center justify-center select-none py-6 my-2"
+      className="relative w-full max-w-[340px] xs:max-w-[420px] sm:max-w-[480px] aspect-square flex items-center justify-center select-none py-4 sm:py-6 my-2"
       style={{ perspective: 1200 }}
     >
       {/* 3D Container with Spring Physics */}
@@ -151,14 +151,14 @@ export default function Hero3DHologram() {
         
         {/* Satellite 1: Top-Left - Cyber Security Service */}
         <div
-          className="absolute -top-1 -left-1 sm:top-1 sm:-left-3 z-30 pointer-events-auto"
+          className="absolute -top-1 left-0 sm:top-1 sm:-left-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(65px)' }}
         >
           <Link to="/services">
             <motion.div
               animate={{ y: [4, -6, 4] }}
               transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#38bdf8]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+              className="p-1 xs:p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#38bdf8]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[130px] xs:max-w-[160px] sm:max-w-[210px] cursor-pointer group"
             >
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#38bdf8]/20 border border-[#38bdf8]/40 flex items-center justify-center text-[#38bdf8] shrink-0 group-hover:scale-110 transition-transform">
                 <Shield size={13} className="sm:w-4 sm:h-4" />
@@ -177,14 +177,14 @@ export default function Hero3DHologram() {
 
         {/* Satellite 2: Top-Right - AI Digital Transformation */}
         <div
-          className="absolute -top-1 -right-1 sm:top-1 sm:-right-3 z-30 pointer-events-auto"
+          className="absolute -top-1 right-0 sm:top-1 sm:-right-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(75px)' }}
         >
           <Link to="/services">
             <motion.div
               animate={{ y: [-5, 5, -5] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#72bf44]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+              className="p-1 xs:p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#72bf44]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[130px] xs:max-w-[160px] sm:max-w-[210px] cursor-pointer group"
             >
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#72bf44]/20 border border-[#72bf44]/40 flex items-center justify-center text-[#85cc38] shrink-0 group-hover:scale-110 transition-transform">
                 <Sparkles size={13} className="sm:w-4 sm:h-4 animate-spin-slow" />
@@ -203,14 +203,14 @@ export default function Hero3DHologram() {
 
         {/* Satellite 3: Bottom-Left - Web Application Development */}
         <div
-          className="absolute -bottom-1 -left-1 sm:bottom-1 sm:-left-3 z-30 pointer-events-auto"
+          className="absolute -bottom-1 left-0 sm:bottom-1 sm:-left-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(70px)' }}
         >
           <Link to="/services">
             <motion.div
               animate={{ y: [5, -5, 5] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#f0b31a]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+              className="p-1 xs:p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#f0b31a]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[130px] xs:max-w-[160px] sm:max-w-[210px] cursor-pointer group"
             >
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#f0b31a]/20 border border-[#f0b31a]/40 flex items-center justify-center text-[#f0b31a] shrink-0 group-hover:scale-110 transition-transform">
                 <Code2 size={13} className="sm:w-4 sm:h-4" />
@@ -229,14 +229,14 @@ export default function Hero3DHologram() {
 
         {/* Satellite 4: Bottom-Right - AI Agents & AI Chatbots */}
         <div
-          className="absolute -bottom-1 -right-1 sm:bottom-1 sm:-right-3 z-30 pointer-events-auto"
+          className="absolute -bottom-1 right-0 sm:bottom-1 sm:-right-3 z-30 pointer-events-auto"
           style={{ transform: 'translateZ(80px)' }}
         >
           <Link to="/services">
             <motion.div
               animate={{ y: [-4, 6, -4] }}
               transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#a855f7]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[155px] sm:max-w-[210px] cursor-pointer group"
+              className="p-1 xs:p-1.5 sm:p-2.5 rounded-xl sm:rounded-2xl bg-[#0c101d]/95 border border-[#a855f7]/60 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,0,0,0.6)] flex items-center gap-1.5 sm:gap-2.5 hover:scale-105 transition-transform max-w-[130px] xs:max-w-[160px] sm:max-w-[210px] cursor-pointer group"
             >
               <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg sm:rounded-xl bg-[#a855f7]/20 border border-[#a855f7]/40 flex items-center justify-center text-[#c084fc] shrink-0 group-hover:scale-110 transition-transform">
                 <Bot size={13} className="sm:w-4 sm:h-4" />

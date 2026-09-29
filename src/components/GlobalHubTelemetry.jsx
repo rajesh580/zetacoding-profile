@@ -58,11 +58,11 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
           
           {/* HUB 1: Bengaluru HQ (India) - Separate Container */}
-          <Card3D maxTilt={10} className="p-6 sm:p-8 rounded-3xl glass-panel-glow border border-[#72bf44]/40 hover:border-[#72bf44]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
+          <Card3D maxTilt={10} className="p-5 sm:p-6 md:p-8 rounded-3xl glass-panel-glow border border-[#72bf44]/40 hover:border-[#72bf44]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#72bf44]/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
             <div>
-              <div className="flex items-center justify-between gap-3 mb-5">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-2xl bg-white p-1.5 shadow-md border-2 border-[#72bf44] flex items-center justify-center shrink-0 overflow-hidden">
                     <img 
@@ -144,11 +144,11 @@ export default function GlobalHubTelemetry({ onOpenCertModal }) {
           </Card3D>
 
           {/* HUB 2: Dubai Office (UAE) - Separate Container */}
-          <Card3D maxTilt={10} className="p-6 sm:p-8 rounded-3xl glass-panel-glow border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
+          <Card3D maxTilt={10} className="p-5 sm:p-6 md:p-8 rounded-3xl glass-panel-glow border border-[#38bdf8]/40 hover:border-[#38bdf8]/70 transition-all flex flex-col justify-between shadow-2xl relative overflow-hidden text-left">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#38bdf8]/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
             <div>
-              <div className="flex items-center justify-between gap-3 mb-5">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-2xl bg-white p-1.5 shadow-md border-2 border-[#38bdf8] flex items-center justify-center shrink-0 overflow-hidden">
                     <img 

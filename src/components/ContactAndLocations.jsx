@@ -48,12 +48,12 @@ export default function ContactAndLocations() {
         </AnimatedSection>
 
         {/* 3 Global Location Cards in Card3D */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 sm:mb-16 w-full">
           {officeLocations.map((loc, idx) => (
             <Card3D
               key={idx}
               maxTilt={12}
-              className="p-8 rounded-3xl glass-panel border border-white/10 hover:border-[#72bf44]/60 flex flex-col justify-between shadow-xl h-full group"
+              className="p-6 sm:p-8 rounded-3xl glass-panel border border-white/10 hover:border-[#72bf44]/60 flex flex-col justify-between shadow-xl h-full group"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
@@ -114,8 +114,8 @@ export default function ContactAndLocations() {
         </div>
 
         {/* Inquiry & Scoping Section */}
-        <div className="p-8 sm:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 w-full shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="p-5 sm:p-8 md:p-12 rounded-3xl glass-panel-glow border border-[#72bf44]/40 w-full shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* Left Column: Consultation Form */}
             <div className="lg:col-span-7 space-y-6 text-left">
