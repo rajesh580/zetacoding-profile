@@ -142,11 +142,15 @@ app.get('{*path}', (req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`==============================================`);
-  console.log(`🚀 ZETACODING Server running on Port: ${PORT}`);
-  console.log(`🌐 Local URL: http://localhost:${PORT}`);
-  console.log(`📦 Serving static files from: ${distPath}`);
-  console.log(`==============================================`);
-});
+// Start Server (only when not running inside Vercel serverless functions)
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`==============================================`);
+    console.log(`🚀 ZETACODING Server running on Port: ${PORT}`);
+    console.log(`🌐 Local URL: http://localhost:${PORT}`);
+    console.log(`📦 Serving static files from: ${distPath}`);
+    console.log(`==============================================`);
+  });
+}
+
+export default app;
