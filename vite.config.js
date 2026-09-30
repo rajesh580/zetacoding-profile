@@ -14,7 +14,12 @@ export default defineConfig({
       output: {
         entryFileNames: 'assets/app-[hash].js',
         chunkFileNames: 'assets/chunk-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'assets/theme-[hash][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        }
       }
     }
   }
