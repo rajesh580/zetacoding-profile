@@ -204,8 +204,8 @@ export default function ContactAndLocations() {
                     <option value="Cyber Security Products (CIPHER & Sachet SOC)">Cyber Security Products (CIPHER & Sachet SOC)</option>
                     <option value="ERP Solutions (AlignBooks across 5 Editions)">ERP Solutions (AlignBooks across 5 Editions)</option>
                     <option value="CRM Solutions (Prospect AI & Tech Free)">CRM Solutions (Prospect AI & Tech Free)</option>
-                    <option value="Custom Software (Garage, Restaurant, Animal, Saloon, Expense)">Custom Software Solutions</option>
                     <option value="Digital Products (3D NFC Business Card & Smart Ordering)">Digital Products (3D NFC Business Card & Smart Ordering)</option>
+                    <option value="Custom Software (Garage, Restaurant, Animal, Saloon, Expense)">Custom Software Solutions</option>
                     <option value="Cyber Security Services (VAPT & SOC Defense)">Cyber Security Services (VAPT & SOC Defense)</option>
                     <option value="AI Digital Transformation (Pixis.AI / GEO & SEO)">AI Digital Transformation (Pixis.AI / GEO & SEO)</option>
                     <option value="Web & Mobile Application Development">Web & Mobile Application Development</option>

@@ -27,7 +27,7 @@ export default function ProductsPage() {
             Products & <span className="bg-gradient-to-r from-[#85cc38] to-[#72bf44] bg-clip-text text-transparent">Platforms Suite</span>
           </h1>
           <p className="mt-2 text-slate-300 text-sm sm:text-base max-w-3xl font-normal leading-relaxed text-left">
-            5 enterprise product suites spanning Cyber Security, Cloud ERP, CRM, Vertical Industry Management, and Digital Contactless Products.
+            5 enterprise product suites spanning Cyber Security, Cloud ERP, CRM, Digital Contactless Products, and Vertical Industry Management.
           </p>
         </motion.div>
       </div>

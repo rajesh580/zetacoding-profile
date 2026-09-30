@@ -58,34 +58,104 @@ export const companyInfo = {
 
 export const journeyTimeline = [
   {
-    year: "2021",
-    badge: "Founding",
-    title: "Inception & Academic Innovation",
-    desc: "Founded in Bengaluru as an engineering services and academic research incubator supporting final year IEEE engineering capstones and student training."
-  },
-  {
-    year: "2022",
-    badge: "Accreditation",
-    title: "ISO 9001:2015 & MSME Certified",
-    desc: "Achieved IAF-recognized ISO 9001:2015 Quality Management certification and official MSME registration under the Government of India."
-  },
-  {
-    year: "2023",
-    badge: "Platforms",
-    title: "Enterprise ERP & SaaS Launch",
-    desc: "Partnered with AlignBooks, SAP Business One, and TMBill. Deployed Cloud ERP to retail, manufacturing, and dining chains across South India."
+    year: "2026+",
+    phase: "Phase 05",
+    status: "Active Frontier",
+    badge: "Next-Gen AI & GEO",
+    title: "GEO & Autonomous AI Agents",
+    subtitle: "Multimodal Intelligence & Generative Citation Dominance",
+    desc: "Pioneered Generative Engine Optimization (GEO) via Pixis.AI and deployed autonomous multimodal AI agents with anvex.ai, delivering 4.4x conversion multipliers across ChatGPT, Gemini, and Claude.",
+    highlights: [
+      "Generative Engine Optimization (GEO) citation dominance",
+      "Multimodal Voice & Vision Autonomous AI Agents (anvex.ai)",
+      "BigDot 24/7 autonomous digital enterprise workforce",
+      "4.4x conversion acceleration in global AI search engines"
+    ],
+    metric: "4.4x Conversion Multiplier",
+    color: "#85cc38",
+    accentBg: "rgba(114, 191, 68, 0.15)",
+    borderColor: "rgba(114, 191, 68, 0.5)",
+    icon: "Rocket"
   },
   {
     year: "2024",
+    phase: "Phase 04",
+    status: "Global Landmark",
     badge: "Global Expansion",
     title: "Dubai LLC Incorporation (UAE)",
-    desc: "Incorporated ZETACODING INFORMATION TECHNOLOGY L.L.C in Dubai under the Department of Economy and Tourism (DET Licence No. 1485234)."
+    subtitle: "Dual-Hub International Footprint & Middle East Expansion",
+    desc: "Incorporated ZETACODING INFORMATION TECHNOLOGY L.L.C in Dubai under the Department of Economy and Tourism (DET Licence No. 1485234), establishing our international corporate office at Burj Al Nahar Complex, Deira.",
+    highlights: [
+      "Dubai DET Commercial Licence #1485234 & Federal Tax Authority (FTA) VAT compliance",
+      "Corporate branch in Burj Al Nahar Complex, Al Muteena, Deira, Dubai",
+      "Cross-border ERP and custom software deployment across UAE retail and hospitality",
+      "Dual-hub engineering delivery model (Bengaluru HQ + Dubai Corporate)"
+    ],
+    metric: "DET #1485234 Registered",
+    color: "#38bdf8",
+    accentBg: "rgba(56, 189, 248, 0.15)",
+    borderColor: "rgba(56, 189, 248, 0.5)",
+    icon: "Globe"
   },
   {
-    year: "2026+",
-    badge: "Next-Gen AI",
-    title: "GEO & Autonomous AI Agents",
-    desc: "Pioneered Generative Engine Optimization (GEO) and anvex.ai multimodal voice/vision agents to deliver 4.4x conversion multipliers in ChatGPT & Gemini."
+    year: "2023",
+    phase: "Phase 03",
+    status: "Platforms Milestone",
+    badge: "Enterprise Platforms",
+    title: "Enterprise ERP & SaaS Launch",
+    subtitle: "Turnkey Operating Systems Powering 50,000+ Businesses",
+    desc: "Partnered with AlignBooks, SAP Business One, and TMBill. Deployed Cloud ERP, WhatsApp CRM, and specialized vertical OS solutions across automotive, dining, salon, and retail sectors.",
+    highlights: [
+      "AlignBooks Gold Partner deployment across 5 specialized ERP editions",
+      "TMBill Restaurant OS deployment with cloud POS & food aggregator sync",
+      "AutoFox/Autorox smart workshop platform powering 36,000+ garages",
+      "Prospect AI lead engine & WhatsApp Cloud CRM rollout"
+    ],
+    metric: "50K+ Businesses Powered",
+    color: "#c084fc",
+    accentBg: "rgba(192, 132, 252, 0.15)",
+    borderColor: "rgba(192, 132, 252, 0.5)",
+    icon: "Database"
+  },
+  {
+    year: "2022",
+    phase: "Phase 02",
+    status: "Quality Standard",
+    badge: "Accreditation",
+    title: "ISO 9001:2015 & MSME Certified",
+    subtitle: "Audited Quality Governance & National Enterprise Recognition",
+    desc: "Achieved IAF-recognized ISO 9001:2015 Quality Management certification and official MSME registration under the Government of India, establishing enterprise-grade governance.",
+    highlights: [
+      "ISO 9001:2015 certified Quality Management System (QMS)",
+      "Official MSME registration under Ministry of MSME, Govt. of India",
+      "Standardized enterprise software development lifecycles (SDLC)",
+      "SOC-ready security compliance and institutional audit frameworks"
+    ],
+    metric: "ISO 9001:2015 Certified",
+    color: "#fbbf24",
+    accentBg: "rgba(251, 191, 36, 0.15)",
+    borderColor: "rgba(251, 191, 36, 0.5)",
+    icon: "ShieldCheck"
+  },
+  {
+    year: "2021",
+    phase: "Phase 01",
+    status: "Genesis",
+    badge: "Founding Genesis",
+    title: "Inception & Academic Innovation",
+    subtitle: "Bengaluru Tech Incubator for High-Velocity Engineering",
+    desc: "Founded in Bengaluru as an engineering services and academic research incubator supporting final year IEEE engineering capstones, student training, and proprietary software prototyping.",
+    highlights: [
+      "Engineering Innovation Headquarters established in Bengaluru, Karnataka",
+      "Academic-Industry 4.0 ecosystem with 25+ university partnerships",
+      "IEEE capstone research mentorship & student development bootcamps",
+      "Core engineering team assembled for proprietary software R&D"
+    ],
+    metric: "Incubator Inception",
+    color: "#2dd4bf",
+    accentBg: "rgba(45, 212, 191, 0.15)",
+    borderColor: "rgba(45, 212, 191, 0.5)",
+    icon: "GraduationCap"
   }
 ];
 
@@ -272,11 +342,79 @@ export const products = [
     ]
   },
 
-  // 4) CUSTOM SOFTWARE SOLUTIONS
+  // 4) DIGITAL PRODUCTS
+  {
+    id: "digital-products",
+    name: "Digital Products",
+    number: "04",
+    category: "Digital Products",
+    badge: "Smart Contactless",
+    tagline: "Smart NFC Profiles & Contactless Browser-Based Ordering",
+    desc: "Modern digital and contactless networking hardware and browser-based ordering systems that eliminate printing costs and streamline transactions.",
+    color: "teal",
+    icon: "CreditCard",
+    plans: [
+      {
+        name: "Basic Plan",
+        price: "Affordable Entry",
+        features: ["Essential contact info", "Basic profile customization", "QR code sharing", "WhatsApp Integration", "One-Time Payment"]
+      },
+      {
+        name: "Advanced Plan",
+        price: "Most Popular",
+        features: ["Everything in Basic", "Custom Branding & Themes", "Gallery & Short Bio", "Social Media Integration", "Lead Capture Form"]
+      },
+      {
+        name: "Fully Brand Enriched Plan",
+        price: "Enterprise Custom",
+        features: ["Everything in Advanced", "Custom Domain (yourbrand.com)", "Multiple Cards for Teams", "Video Introduction & Showcase", "Priority Concierge Support", "Full Analytics & CRM Sync"]
+      }
+    ],
+    types: [
+      {
+        id: "digital-business-card",
+        name: "Digital Business Card",
+        subtype: "NFC Smart Tap Profile & Hardware Ecosystem",
+        tagline: "Make Your Card Your Brand Ambassador — Tap to Share, Connect, Grow",
+        desc: "Eco-friendly, tap-to-connect NFC smart business cards and dynamic digital profiles with automated lead capture, instant vCard saving, and team management dashboards.",
+        badge: "Tap NFC",
+        highlights: [
+          "Contactless Tap to Share on all modern iPhone & Android Devices",
+          "Custom Domain Integration (e.g. card.yourcompany.com) with Luxury Branding",
+          "Real-Time Dynamic Profile Updates with Zero Reprinting Costs",
+          "Instant CRM Lead Capture & WhatsApp Contact Sync"
+        ],
+        hardwareRange: [
+          "Custom Metal Cards (Premium Luxury)",
+          "Eco Wooden Cards",
+          "Matte PVC Cards",
+          "NFC Multi-Color Keychains",
+          "NFC Smart Stickers (1 Dot / 3 Dot)",
+          "QR Countertop Standees for Retailers"
+        ]
+      },
+      {
+        id: "smart-ordering",
+        name: "Smart Ordering",
+        subtype: "Contactless QR Dining & In-Store Ordering",
+        tagline: "Zero-App Download Mobile Browser Catalog & Ordering System",
+        desc: "Dynamic QR code smart ordering system enabling guests and shoppers to scan a QR code, browse interactive menus, place orders, and pay directly from their mobile browser.",
+        badge: "Browser QR",
+        highlights: [
+          "Zero App Download Required — 100% Mobile Browser Based",
+          "Instant Tabletop & Countertop QR Ordering with Real-Time Menu Updates",
+          "Direct Integration with Kitchen Order Tickets (KOT) & TMBill POS",
+          "Integrated Multi-Currency Gateways (Apple Pay, UPI, Credit Cards)"
+        ]
+      }
+    ]
+  },
+
+  // 5) CUSTOM SOFTWARE SOLUTIONS
   {
     id: "custom-software-solutions",
     name: "Custom Software Solutions",
-    number: "04",
+    number: "05",
     category: "Custom Software Solutions",
     badge: "50K+ Businesses",
     tagline: "Specialized Industry Management Systems Tailored for Vertical Domains",
@@ -352,74 +490,6 @@ export const products = [
           "Custom Multi-Level Approval Hierarchies for Department Heads",
           "Real-Time Card Spend Limits & Department Budget Allocations",
           "Direct Auto-Reconciliation with AlignBooks, SAP & ERPNext"
-        ]
-      }
-    ]
-  },
-
-  // 5) DIGITAL PRODUCTS
-  {
-    id: "digital-products",
-    name: "Digital Products",
-    number: "05",
-    category: "Digital Products",
-    badge: "Smart Contactless",
-    tagline: "Smart NFC Profiles & Contactless Browser-Based Ordering",
-    desc: "Modern digital and contactless networking hardware and browser-based ordering systems that eliminate printing costs and streamline transactions.",
-    color: "teal",
-    icon: "CreditCard",
-    plans: [
-      {
-        name: "Basic Plan",
-        price: "Affordable Entry",
-        features: ["Essential contact info", "Basic profile customization", "QR code sharing", "WhatsApp Integration", "One-Time Payment"]
-      },
-      {
-        name: "Advanced Plan",
-        price: "Most Popular",
-        features: ["Everything in Basic", "Custom Branding & Themes", "Gallery & Short Bio", "Social Media Integration", "Lead Capture Form"]
-      },
-      {
-        name: "Fully Brand Enriched Plan",
-        price: "Enterprise Custom",
-        features: ["Everything in Advanced", "Custom Domain (yourbrand.com)", "Multiple Cards for Teams", "Video Introduction & Showcase", "Priority Concierge Support", "Full Analytics & CRM Sync"]
-      }
-    ],
-    types: [
-      {
-        id: "digital-business-card",
-        name: "Digital Business Card",
-        subtype: "NFC Smart Tap Profile & Hardware Ecosystem",
-        tagline: "Make Your Card Your Brand Ambassador — Tap to Share, Connect, Grow",
-        desc: "Eco-friendly, tap-to-connect NFC smart business cards and dynamic digital profiles with automated lead capture, instant vCard saving, and team management dashboards.",
-        badge: "Tap NFC",
-        highlights: [
-          "Contactless Tap to Share on all modern iPhone & Android Devices",
-          "Custom Domain Integration (e.g. card.yourcompany.com) with Luxury Branding",
-          "Real-Time Dynamic Profile Updates with Zero Reprinting Costs",
-          "Instant CRM Lead Capture & WhatsApp Contact Sync"
-        ],
-        hardwareRange: [
-          "Custom Metal Cards (Premium Luxury)",
-          "Eco Wooden Cards",
-          "Matte PVC Cards",
-          "NFC Multi-Color Keychains",
-          "NFC Smart Stickers (1 Dot / 3 Dot)",
-          "QR Countertop Standees for Retailers"
-        ]
-      },
-      {
-        id: "smart-ordering",
-        name: "Smart Ordering",
-        subtype: "Contactless QR Dining & In-Store Ordering",
-        tagline: "Zero-App Download Mobile Browser Catalog & Ordering System",
-        desc: "Dynamic QR code smart ordering system enabling guests and shoppers to scan a QR code, browse interactive menus, place orders, and pay directly from their mobile browser.",
-        badge: "Browser QR",
-        highlights: [
-          "Zero App Download Required — 100% Mobile Browser Based",
-          "Instant Tabletop & Countertop QR Ordering with Real-Time Menu Updates",
-          "Direct Integration with Kitchen Order Tickets (KOT) & TMBill POS",
-          "Integrated Multi-Currency Gateways (Apple Pay, UPI, Credit Cards)"
         ]
       }
     ]

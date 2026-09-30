@@ -64,10 +64,10 @@ export default function Footer({ onOpenCertModal }) {
               <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">CIPHER Web Security</Link></li>
               <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">AlignBooks Cloud ERP</Link></li>
               <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Prospect AI Lead Engine</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Restaurant OS (TMBill)</Link></li>
-              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Garage OS (AutoFox)</Link></li>
               <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Digital Business Cards</Link></li>
               <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Smart Ordering</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Restaurant OS (TMBill)</Link></li>
+              <li><Link to="/products" className="hover:text-[#85cc38] transition-colors">Garage OS (AutoFox)</Link></li>
             </ul>
           </div>
 
@@ -98,7 +98,7 @@ export default function Footer({ onOpenCertModal }) {
                 <span className="text-white font-bold block text-xs">Bengaluru HQ (India)</span>
                 <span className="block text-slate-300">Bengaluru - 560064</span>
                 <a href="tel:+918867845719" className="block text-[#85cc38] font-mono font-bold hover:underline mt-0.5">
-                  Contact no. +91 8867845719
+                  +91 8867845719
                 </a>
               </div>
 
@@ -116,7 +116,7 @@ export default function Footer({ onOpenCertModal }) {
                   className="flex items-center gap-1.5 text-slate-200 hover:text-[#85cc38] transition-colors font-medium"
                 >
                   <Mail size={13} className="text-[#85cc38]" />
-                  <span>Mail. info@zetacoding.com</span>
+                  <span>info@zetacoding.com</span>
                 </a>
                 <a 
                   href="https://www.zetacoding.com" 

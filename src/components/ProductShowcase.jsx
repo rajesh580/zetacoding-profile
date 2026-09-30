@@ -18,8 +18,8 @@ export default function ProductShowcase() {
     { name: 'Cybersecurity Products', label: 'Cyber Security Products', icon: <Shield size={15} /> },
     { name: 'ERP Solutions', label: 'ERP Solutions', icon: <Database size={15} /> },
     { name: 'CRM Solutions', label: 'CRM Solutions', icon: <Workflow size={15} /> },
-    { name: 'Custom Software Solutions', label: 'Custom Software Solutions', icon: <Cpu size={15} /> },
-    { name: 'Digital Products', label: 'Digital Products', icon: <CreditCard size={15} /> }
+    { name: 'Digital Products', label: 'Digital Products', icon: <CreditCard size={15} /> },
+    { name: 'Custom Software Solutions', label: 'Custom Software Solutions', icon: <Cpu size={15} /> }
   ];
 
   const filteredProducts = products.filter(p => {
